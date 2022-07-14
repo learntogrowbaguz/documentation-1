@@ -80,7 +80,7 @@ If you need to remove consumer contracts from the subscription, use the `removeC
 
 ## Funding and requesting simultaneously
 
-You can fund a subscription and request randomness in a single transaction. This is similar to how VRF v1 functions, but you must estimate how much the transaction might cost and determine the amount of funding to send to the subscription yourself. See the [Subscription billing](/docs/chainlink-vrf/#subscription-billing) page to learn how to estimate request costs.
+You can fund a subscription and request randomness in a single transaction. This is similar to how VRF v1 functions, but you must estimate how much the transaction might cost and determine the amount of funding to send to the subscription yourself. See the [Subscription billing](/docs/chainlink-vrf-v2-subscription/#subscriptions) page to learn how to estimate request costs.
 
 ```solidity
 {% include 'snippets/VRF/VRFv2FundAndRequestFunction.sol' %}

@@ -189,12 +189,26 @@ module.exports = {
             url: '/docs/chainlink-vrf/',
           },
           {
-            title: 'Get a Random Number',
-            url: '/docs/get-a-random-number/',
-          },
-          {
-            title: 'Example Contracts',
-            url: '/docs/chainlink-vrf/example-contracts/',
+            title: 'Subscription model',
+            url: '/docs/chainlink-vrf-v2-subscription/',
+            children: [
+              {
+                title: 'Get a Random Number',
+                url: '/docs/get-a-random-number/',
+              },
+              {
+                title: 'Example Contracts',
+                url: '/docs/chainlink-vrf/example-contracts/',
+              },
+              {
+                title: 'Configuration',
+                url: '/docs/vrf-contracts/',
+              },
+              {
+                title: 'Migrating to VRF v2',
+                url: '/docs/chainlink-vrf/migration-vrf-v1-v2/',
+              },
+            ],
           },
           {
             title: 'Security Considerations',
@@ -203,14 +217,6 @@ module.exports = {
           {
             title: 'Best Practices',
             url: '/docs/chainlink-vrf-best-practices/',
-          },
-          {
-            title: 'Contract Addresses',
-            url: '/docs/vrf-contracts/',
-          },
-          {
-            title: 'Migrating to VRF v2',
-            url: '/docs/chainlink-vrf/migration-vrf-v1-v2/',
           },
         ],
       },
