@@ -118,7 +118,7 @@ To use this contract:
 
 ### Configuration
 
-Below a summary of the configuration of Chainlink VRF on Avalanche Fuji Testnet. Check the [developer documentation](/docs/vrf-contracts/#coordinator-parameters) for a more detailed explanation.
+Below a summary of the configuration of Chainlink VRF on Avalanche Fuji Testnet. Check the [developer documentation](/docs/vrf/v2/subscription/configuration/#coordinator-parameters) for a more detailed explanation.
 
 | Item                  | Value                                                                                                                         |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |

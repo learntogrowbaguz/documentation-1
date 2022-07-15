@@ -11,7 +11,7 @@ metadata:
 
 > 🚧 VRF v2 replaces and enhances VRF v1.
 >
-> See the [VRF v2 documentation](/docs/get-a-random-number/) to learn more.
+> See the [VRF v2 documentation](/docs/vrf/v2/subscription/get-a-random-number/) to learn more.
 
 This page explains how to get a random number inside a smart contract using Chainlink VRF.
 

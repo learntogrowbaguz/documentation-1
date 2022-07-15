@@ -3,12 +3,20 @@ layout: nodes.liquid
 section: ethereum
 date: Last Modified
 title: ' Subscription Model'
-permalink: 'docs/chainlink-vrf-v2-subscription/'
-whatsnext: { 'Get a Random Number': '/docs/get-a-random-number/', 'Contract Addresses': '/docs/vrf-contracts/' }
+permalink: 'docs/vrf/v2/subscription/'
+whatsnext:
+  {
+    'Get a Random Number': '/docs/vrf/v2/subscription/get-a-random-number/',
+    'Configuration': '/docs/vrf/v2/subscription/configuration/',
+  }
 metadata:
   title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Subscription model'
   description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2(an RNG). This guide uses the subscription model.'
 ---
+
+> ℹ️ You are viewing the VRF v2 guide.
+>
+> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
 
 **Table of contents**
 
@@ -77,11 +85,11 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
 
 1. The consumer contract must inherit [VRFConsumerBaseV2](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFConsumerBaseV2.sol) and implement the `fulfillRandomWords` function, which is the _callback VRF function_. Submit your VRF request by calling `requestRandomWords` of the [VRF Coordinator](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFCoordinatorV2.sol) with:
 
-- `keyHash`: Identifier that maps to a job and a private key on the VRF node and that represents a specified gas lane. If your request is urgent, specify a gas lane with a higher gas price limit. The configuration for your network can be found [here](/docs/vrf-contracts/#configurations).
+- `keyHash`: Identifier that maps to a job and a private key on the VRF node and that represents a specified gas lane. If your request is urgent, specify a gas lane with a higher gas price limit. The configuration for your network can be found [here](/docs/vrf/v2/subscription/configuration/#configurations).
 - `s_subscriptionId`: The subscription id that the consumer contract is registered to. LINK funds are deducted from this subscription.
-- `requestConfirmations`: The number of block confirmations the oracle node will wait to respond. The minimum and maximum confirmations for your network can be found [here](/docs/vrf-contracts/#configurations).
+- `requestConfirmations`: The number of block confirmations the oracle node will wait to respond. The minimum and maximum confirmations for your network can be found [here](/docs/vrf/v2/subscription/configuration/#configurations).
 - `callbackGasLimit`: The maximum amount of gas a user is willing to pay for completing the callback VRF function.
-- `numWords`: The number of random numbers to request. The maximum random values that can be requested for your network can be found [here](/docs/vrf-contracts/#configurations).
+- `numWords`: The number of random numbers to request. The maximum random values that can be requested for your network can be found [here](/docs/vrf/v2/subscription/configuration/#configurations).
 
 2. The VRF coordinator emits an event.
 
@@ -94,9 +102,9 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
    (Gas price * (Verification gas + Callback gas)) = total gas cost
    ```
 
-   The total gas cost is converted to LINK using the ETH/LINK data feed. In the unlikely event that the data feed is unavailable, the VRF coordinator uses the `fallbackWeiPerUnitLink` value for the conversion instead. The `fallbackWeiPerUnitLink` value is defined in the [coordinator contract](/docs/vrf-contracts/#configurations) for your selected network.
+   The total gas cost is converted to LINK using the ETH/LINK data feed. In the unlikely event that the data feed is unavailable, the VRF coordinator uses the `fallbackWeiPerUnitLink` value for the conversion instead. The `fallbackWeiPerUnitLink` value is defined in the [coordinator contract](/docs/vrf/v2/subscription/configuration/#configurations) for your selected network.
 
-   The LINK premium is added to the total gas cost. The premium is defined in the [coordinator contract](/docs/vrf-contracts/#configurations) with the `fulfillmentFlatFeeLinkPPMTier1` parameter in millionths of LINK.
+   The LINK premium is added to the total gas cost. The premium is defined in the [coordinator contract](/docs/vrf/v2/subscription/configuration/#configurations) with the `fulfillmentFlatFeeLinkPPMTier1` parameter in millionths of LINK.
 
    ```
    (total gas cost + LINK premium) = total request cost
@@ -123,7 +131,7 @@ Each subscription has the following limits:
 
 #### Coordinator contract limits
 
-You can see the configuration for each network on the [Contract Addresses](/docs/vrf-contracts/) page. You can also view the full configuration for each coordinator contract directly in Etherscan. As an example, view the [Ethereum Mainnet VRF v2 coordinator contract](https://etherscan.io/token/0x271682DEB8C4E0901D1a1550aD2e64D568E69909#readContract) configuration.
+You can see the configuration for each network on the [Configuration](/docs/vrf/v2/subscription/configuration/) page. You can also view the full configuration for each coordinator contract directly in Etherscan. As an example, view the [Ethereum Mainnet VRF v2 coordinator contract](https://etherscan.io/token/0x271682DEB8C4E0901D1a1550aD2e64D568E69909#readContract) configuration.
 
 - Each coordinator has a `MAX_NUM_WORDS` parameter that limits the maximum number of random values you can receive in each request.
 - Each coordinator has a `maxGasLimit` parameter, which is the maximum allowed `callbackGasLimit` value for your requests. You must specify a sufficient `callbackGasLimit` to fund the callback request to your consumer contract. This depends on the number of random values you request and how you process them in your `fulfillRandomWords()` function. If your `callbackGasLimit` is not sufficient, the callback fails but your subscription is still charged for the work done to generate your requested random values.

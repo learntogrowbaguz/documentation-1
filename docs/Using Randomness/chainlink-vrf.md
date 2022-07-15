@@ -4,7 +4,11 @@ section: ethereum
 date: Last Modified
 title: 'Introduction to Chainlink VRF'
 permalink: 'docs/chainlink-vrf/'
-whatsnext: { 'Get a Random Number': '/docs/get-a-random-number/', 'Contract Addresses': '/docs/vrf-contracts/' }
+whatsnext:
+  {
+    'Get a Random Number': '/docs/vrf/v2/subscription/get-a-random-number/',
+    'Configuration': '/docs/vrf/v2/subscription/configuration/',
+  }
 metadata:
   title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF'
   description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF (an RNG). This guide uses Solidity code examples.'
@@ -14,7 +18,7 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](./v1).
+> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
 
 Chainlink VRF (Verifiable Random Function) is a provably fair and verifiable random number generator (RNG) that enables smart contracts to access random values without compromising security or usability.
 
@@ -40,21 +44,21 @@ To learn more about the benefits of Chainlink VRF v2, see our blog post [Chainli
 Chainlink VRF v2 is currently available on the following networks:
 
 - Ethereum:
-  - [Mainnet](/docs/vrf-contracts/#ethereum-mainnet)
-  - [Rinkeby testnet](/docs/vrf-contracts/#rinkeby-testnet)
+  - [Mainnet](/docs/vrf/v2/subscription/configuration/#ethereum-mainnet)
+  - [Rinkeby testnet](/docs/vrf/v2/subscription/configuration/#rinkeby-testnet)
 - BNB Chain:
-  - [Mainnet](/docs/vrf-contracts/#bnb-chain)
-  - [Testnet](/docs/vrf-contracts/#bnb-chain-testnet)
+  - [Mainnet](/docs/vrf/v2/subscription/configuration/#bnb-chain)
+  - [Testnet](/docs/vrf/v2/subscription/configuration/#bnb-chain-testnet)
 - Polygon (Matic):
-  - [Mainnet](/docs/vrf-contracts/#polygon-matic-mainnet)
-  - [Mumbai Testnet](/docs/vrf-contracts/#polygon-matic-mumbai-testnet)
+  - [Mainnet](/docs/vrf/v2/subscription/configuration/#polygon-matic-mainnet)
+  - [Mumbai Testnet](/docs/vrf/v2/subscription/configuration/#polygon-matic-mumbai-testnet)
 - Avalanche:
-  - [Avalanche Mainnet](/docs/vrf-contracts/#avalanche-mainnet)
-  - [Avalanche Fuji Testnet](/docs/vrf-contracts/#avalanche-fuji-testnet)
+  - [Avalanche Mainnet](/docs/vrf/v2/subscription/configuration/#avalanche-mainnet)
+  - [Avalanche Fuji Testnet](/docs/vrf/v2/subscription/configuration/#avalanche-fuji-testnet)
 - Fantom:
-  - [Fantom Mainnet](/docs/vrf-contracts/#fantom-mainnet)
-  - [Fantom Testnet](/docs/vrf-contracts/#fantom-testnet)
+  - [Fantom Mainnet](/docs/vrf/v2/subscription/configuration/#fantom-mainnet)
+  - [Fantom Testnet](/docs/vrf/v2/subscription/configuration/#fantom-testnet)
 
-See the [Contract Addresses](/docs/vrf-contracts) page for a complete list of coordinator addresses and gas price limits.
+See the [Configuration](/docs/vrf/v2/subscription/configuration/) page for a complete list of coordinator addresses and gas price limits.
 
 To learn when VRF v2 becomes available on more networks, follow us on [Twitter](https://twitter.com/chainlink) or sign up for our [mailing list](/docs/developer-communications/).

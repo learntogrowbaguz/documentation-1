@@ -7,11 +7,11 @@ permalink: 'docs/intermediates-tutorial/'
 excerpt: 'Using Chainlink VRF'
 whatsnext:
   {
-    'Get a Random Number': '/docs/get-a-random-number/',
+    'Get a Random Number': '/docs/vrf/v2/subscription/get-a-random-number/',
     'Example Contracts': '/docs/chainlink-vrf/example-contracts/',
     'Security Considerations': '/docs/vrf-security-considerations/',
     'Best Practices': '/docs/chainlink-vrf-best-practices/',
-    'Contract Addresses': '/docs/vrf-contracts/',
+    'Configuration': '/docs/vrf/v2/subscription/configuration/',
   }
 metadata:
   title: 'Random Numbers: Using Chainlink VRF'
@@ -63,7 +63,7 @@ To learn more about VRF requests funding, see [Subscriptions](/docs/chainlink-vr
 
 ## 4. How can I use Chainlink VRF?
 
-To see a basic implementation of Chainlink VRF, see [Get a Random Number](../get-a-random-number/). In this section, you will create an application that uses Chainlink VRF to generate randomness. The contract used in this application will have a [_Game of Thrones_](https://en.wikipedia.org/wiki/Game_of_Thrones) theme.
+To see a basic implementation of Chainlink VRF, see [Get a Random Number](/docs/vrf/v2/subscription/get-a-random-number/). In this section, you will create an application that uses Chainlink VRF to generate randomness. The contract used in this application will have a [_Game of Thrones_](https://en.wikipedia.org/wiki/Game_of_Thrones) theme.
 
 The contract will request randomness from Chainlink VRF. The result of the randomness will transform into a number between 1 and 20, mimicking the rolling of a 20 sided die. Each number represents a _Game of Thrones_ house. If the dice land on the value 1, the user is assigned house Targaryan, 2 for Lannister, and so on. A full list of houses can be found [here](https://gameofthrones.fandom.com/wiki/Great_House).
 
@@ -80,7 +80,7 @@ The contract will have the following functions:
 ### Create and fund a subscription
 
 Chainlink VRF requests receive funding from subscription accounts. The [Subscription Manager](https://vrf.chain.link) lets you create an account and pre-pay your use of Chainlink VRF requests.
-For this example, create a new subscription on the Rinkeby testnet as explained [here](/docs/get-a-random-number/#create-and-fund-a-subscription).
+For this example, create a new subscription on the Rinkeby testnet as explained [here](/docs/vrf/v2/subscription/get-a-random-number/#create-and-fund-a-subscription).
 
 ### Importing `VRFConsumerBaseV2` and `VRFCoordinatorV2Interface`
 
@@ -103,7 +103,7 @@ contract VRFD20 is VRFConsumerBaseV2 {
 
 ### Contract variables
 
-This example is adapted for [Rinkeby testnet](/docs/vrf-contracts/#rinkeby-testnet) but you can change the configuration and make it run for any [supported network](/docs/vrf-contracts/#configurations).
+This example is adapted for [Rinkeby testnet](/docs/vrf/v2/subscription/configuration/#rinkeby-testnet) but you can change the configuration and make it run for any [supported network](/docs/vrf/v2/subscription/configuration/#configurations).
 
 ```solidity
 uint64 s_subscriptionId;
@@ -366,7 +366,7 @@ Then click the `Deploy` button and use your Metamask account to confirm the tran
 
 > 📘 Address, Key Hashes and more
 >
-> For a full reference of the addresses, key hashes and fees for each network, see [VRF Contract Addresses](/docs/vrf-contracts/#configurations).
+> For a full reference of the addresses, key hashes and fees for each network, see [VRF Contract Addresses](/docs/vrf/v2/subscription/configuration/#configurations).
 
 At this point, your contract should be successfully deployed. However, it can't request anything because it is not yet approved to use the LINK balance in your subscription. If you click `rollDice`, the transaction will revert.
 

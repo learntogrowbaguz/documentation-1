@@ -190,23 +190,23 @@ module.exports = {
           },
           {
             title: 'Subscription model',
-            url: '/docs/chainlink-vrf-v2-subscription/',
+            url: '/docs/vrf/v2/subscription/',
             children: [
               {
                 title: 'Get a Random Number',
-                url: '/docs/get-a-random-number/',
+                url: '/docs/vrf/v2/subscription/get-a-random-number/',
               },
               {
-                title: 'Example Contracts',
-                url: '/docs/chainlink-vrf/example-contracts/',
+                title: 'More Examples',
+                url: '/docs/vrf/v2/subscription/more-examples/',
               },
               {
                 title: 'Configuration',
-                url: '/docs/vrf-contracts/',
+                url: '/docs/vrf/v2/subscription/configuration/',
               },
               {
                 title: 'Migrating to VRF v2',
-                url: '/docs/chainlink-vrf/migration-vrf-v1-v2/',
+                url: '/docs/vrf/v2/subscription/migration-v1-v2/',
               },
             ],
           },

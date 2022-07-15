@@ -273,6 +273,16 @@
         "source": "/docs/any-api-testnet-nodes",
         "destination": "/docs/any-api-testnet-oracles/",
         "type": 301
+      },
+      {
+        "source": "/docs/get-a-random-number/",
+        "destination": "/docs/vrf/v2/subscription/get-a-random-number/",
+        "type": 301
+      },
+      {
+        "source": "/docs/vrf-contracts/",
+        "destination": "/docs/vrf/v2/subscription/configuration/",
+        "type": 301
       }
     ]
   }

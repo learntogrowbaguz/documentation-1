@@ -2,8 +2,8 @@
 layout: nodes.liquid
 section: ethereum
 date: Last Modified
-title: 'Contract Addresses'
-permalink: 'docs/vrf-contracts/'
+title: 'Configuration'
+permalink: 'docs/vrf/v2/subscription/configuration/'
 metadata:
   title: 'Chainlink VRF Contract Addresses'
   linkToWallet: true
@@ -13,7 +13,7 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](./v1).
+> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
 
 Chainlink VRF allows you to integrate provably fair and verifiably random data in your smart contract.
 
