@@ -2,27 +2,27 @@
 layout: nodes.liquid
 section: ethereum
 date: Last Modified
-title: "Migrating to VRF v2"
-permalink: "docs/vrf/v2/subscription/migration-v1-v2/"
+title: 'Migrating to VRF v2'
+permalink: 'docs/vrf/v2/subscription/migration-v1-v2/'
 ---
 
 > 📘 You are viewing the VRF v2 guide.
 >
 > If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
 
-## Comparison between VRF v1 and VRF v2
+## Comparison between VRF v1 and VRF v2 (Subscription Model)
 
 Chainlink VRF v2 includes several improvements and changes to the way you fund and request randomness for your smart contracts.
 
-+ **Subscription management:** Chainlink VRF v2 introduces a [Subscription Manager](https://vrf.chain.link) application that allows smart contract applications to pre-fund multiple requests for randomness using a single LINK token balance. This reduces the gas fees for VRF requests by eliminating the need to transfer LINK tokens for each individual request. You transfer LINK tokens to the subscription balance only when it requires additional funding. Go to the [Subscription Manager](https://vrf.chain.link) to learn more.
+- **Subscription management:** Chainlink VRF v2 introduces a [Subscription Manager](https://vrf.chain.link) application that allows smart contract applications to pre-fund multiple requests for randomness using a single LINK token balance. This reduces the gas fees for VRF requests by eliminating the need to transfer LINK tokens for each individual request. You transfer LINK tokens to the subscription balance only when it requires additional funding. Go to the [Subscription Manager](https://vrf.chain.link) to learn more.
 
-+ **Variable Callback Gas Limit:** Chainlink VRF v2 lets you adjust the callback gas limit when your smart contract application receives verifiable randomness. Consuming contracts can execute more complex logic in the callback request function that receives the random values. Tasks involving the delivered randomness are handled during the response process. The new gas limits are higher than the VRF V1 limit, and vary depending on the underlying blockchain you use. See the gas limits on the [VRF Contract Addresses](/docs/vrf/v2/subscription/configuration/) page.
+- **Variable Callback Gas Limit:** Chainlink VRF v2 lets you adjust the callback gas limit when your smart contract application receives verifiable randomness. Consuming contracts can execute more complex logic in the callback request function that receives the random values. Tasks involving the delivered randomness are handled during the response process. The new gas limits are higher than the VRF V1 limit, and vary depending on the underlying blockchain you use. See the gas limits on the [VRF Contract Addresses](/docs/vrf/v2/subscription/configuration/) page.
 
-+ **More configuration capability:** You can define how many block confirmations must pass before verifiable randomness is generated and delivered on-chain when your application makes a request transaction. The range is from 3 to 200 blocks. VRF V1 always waited 10 blocks on Ethereum before delivering on-chain randomness. Select a value that protects your application from block re-organizations while still providing sufficiently low latency from request to response. See the [Security Considerations](/docs/vrf-security-considerations/) page to learn more.
+- **More configuration capability:** You can define how many block confirmations must pass before verifiable randomness is generated and delivered on-chain when your application makes a request transaction. The range is from 3 to 200 blocks. VRF V1 always waited 10 blocks on Ethereum before delivering on-chain randomness. Select a value that protects your application from block re-organizations while still providing sufficiently low latency from request to response. See the [Security Considerations](/docs/vrf-security-considerations/) page to learn more.
 
-+ **Multiple Random Outputs in a Single Request:** The [VRF Coordinator contracts](/docs/vrf/v2/subscription/configuration/) in VRF v2 allow you to request multiple random numbers (multi-word) in a single on-chain transaction, which reduces gas costs. The fulfillment is also a single transaction, which reduces the latency of responses.
+- **Multiple Random Outputs in a Single Request:** The [VRF Coordinator contracts](/docs/vrf/v2/subscription/configuration/) in VRF v2 allow you to request multiple random numbers (multi-word) in a single on-chain transaction, which reduces gas costs. The fulfillment is also a single transaction, which reduces the latency of responses.
 
-+ **Unified Billing - Delegate Subscription Balance to Multiple Addresses:** Chainlink VRF v2 allows up to 100 smart contract addresses to fund their requests for verifiable randomness from a single LINK subscription balance, which is managed by the subscription owner.
+- **Unified Billing - Delegate Subscription Balance to Multiple Addresses:** Chainlink VRF v2 allows up to 100 smart contract addresses to fund their requests for verifiable randomness from a single LINK subscription balance, which is managed by the subscription owner.
 
 Read the [Chainlink VRF v2 blog post](https://blog.chain.link/vrf-v2-mainnet-launch/) for a detailed explanation about the benefits and use cases for VRF v2.
 
