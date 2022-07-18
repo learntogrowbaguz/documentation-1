@@ -211,6 +211,24 @@ module.exports = {
             ],
           },
           {
+            title: 'Wrapper model (one-off)',
+            url: '/docs/vrf/v2/wrapper/',
+            children: [
+              {
+                title: 'Get a Random Number',
+                url: '/docs/vrf/v2/wrapper/get-a-random-number/',
+              },
+              {
+                title: 'Configuration',
+                url: '/docs/vrf/v2/wrapper/configuration/',
+              },
+              {
+                title: 'Migrating to VRF v2',
+                url: '/docs/vrf/v2/wrapper/migration-v1-v2/',
+              },
+            ],
+          },
+          {
             title: 'Security Considerations',
             url: '/docs/vrf-security-considerations/',
           },
