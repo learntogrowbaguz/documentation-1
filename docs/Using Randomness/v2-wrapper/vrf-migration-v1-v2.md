@@ -12,7 +12,7 @@ permalink: 'docs/vrf/v2/wrapper/migration-v1-v2/'
 
 ## Comparison between VRF v1 and VRF v2 (Wrapper Model)
 
-The main similarity between VRF v1 and VRF v2 Wrapper Model is that consuming contracts have to be funded with LINK in order to pay to request randomness. However, Chainlink VRF v2 includes several improvements.
+The main similarity between VRF v1 and VRF v2 Wrapper Model is that consumer contracts have to be funded with LINK in order to pay to request randomness. However, Chainlink VRF v2 includes several improvements.
 
 - **Variable Callback Gas Limit:** Chainlink VRF v2 lets you adjust the callback gas limit when your smart contract application receives verifiable randomness. Consuming contracts can execute more complex logic in the callback request function that receives the random values. Tasks involving the delivered randomness are handled during the response process. The new gas limits are higher than the VRF V1 limit, and vary depending on the underlying blockchain you use. See the gas limits on the [Configuration](/docs/vrf/v2/wrapper/configuration/) page.
 

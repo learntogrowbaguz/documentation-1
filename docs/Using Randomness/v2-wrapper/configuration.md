@@ -147,16 +147,17 @@ The details for calculating the total transaction cost can be found [here](/docs
 >
 > Testnet LINK and MATIC are available from the [Polygon faucet](https://faucet.polygon.technology/) and https://faucets.chain.link/mumbai.
 
-| Item                  | Value                                                                                                                                                                                                                         |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| LINK Token            | <a class="erc-token-address" id="80001_0x326C977E6efc84E512bB9C30f76E30c160eD06FB" href="https://mumbai.polygonscan.com/address/0x326C977E6efc84E512bB9C30f76E30c160eD06FB">`0x326C977E6efc84E512bB9C30f76E30c160eD06FB `</a> |
-| VRF Wrapper           | [`0xdEA68FD294163cE1310124c4336e092243eaD52A`](https://polygonscan.com/address/0xdEA68FD294163cE1310124c4336e092243eaD52A)                                                                                                    |
-| VRF Coordinator       | [`0x7a1BaC17Ccc5b313516C5E16fb24f7659aA5ebed`](https://mumbai.polygonscan.com/address/0x7a1BaC17Ccc5b313516C5E16fb24f7659aA5ebed)                                                                                             |
-| 500 gwei Key Hash     | `0x4b09e658ed251bcafeebbc69400383d49f344ace09b9576fe248bb02c003fe9f`                                                                                                                                                          |
-| Premium               | 0.0005 LINK                                                                                                                                                                                                                   |
-| Minimum Confirmations | 3                                                                                                                                                                                                                             |
-| Maximum Confirmations | 200                                                                                                                                                                                                                           |
-| Maximum Random Values | 500                                                                                                                                                                                                                           |
+| Item                       | Value                                                                                                                                                                                                                         |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LINK Token                 | <a class="erc-token-address" id="80001_0x326C977E6efc84E512bB9C30f76E30c160eD06FB" href="https://mumbai.polygonscan.com/address/0x326C977E6efc84E512bB9C30f76E30c160eD06FB">`0x326C977E6efc84E512bB9C30f76E30c160eD06FB `</a> |
+| VRF Wrapper                | [`0x25D7214ae75F169263921a1cAaf7E6F033210E24`](https://mumbai.polygonscan.com/address/0x25D7214ae75F169263921a1cAaf7E6F033210E24)                                                                                             |
+| VRF Coordinator            | [`0x7a1BaC17Ccc5b313516C5E16fb24f7659aA5ebed`](https://mumbai.polygonscan.com/address/0x7a1BaC17Ccc5b313516C5E16fb24f7659aA5ebed)                                                                                             |
+| Wrapper Premium Percentage | 60                                                                                                                                                                                                                            |
+| Coordinator Flat Fee       | 0.0005 LINK                                                                                                                                                                                                                   |
+| Maximum Confirmations      | 200                                                                                                                                                                                                                           |
+| Maximum Random Values      | 10                                                                                                                                                                                                                            |
+| Wrapper Gas overhead       | 30000                                                                                                                                                                                                                         |
+| Coordinator Gas Overhead   | 90000                                                                                                                                                                                                                         |
 
 ### Avalanche Mainnet
 
@@ -200,14 +201,14 @@ The details for calculating the total transaction cost can be found [here](/docs
 | Item                       | Value                                                                                                                                                                                                         |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LINK Token                 | <a class="erc-token-address" id="250_0x6f43ff82cca38001b6699a8ac47a2d0e66939407" href="https://ftmscan.com/token/0x6f43ff82cca38001b6699a8ac47a2d0e66939407">`0x6f43ff82cca38001b6699a8ac47a2d0e66939407`</a> |
-| VRF Wrapper                | [`0x78b69899C8cD252126cBB1A50171ec37286C3877`](https://ftmscan.com/address/0xfc42b5ff1bd8e85ea71a07086f1d8b6b4cd8149f)                                                                                        |
+| VRF Wrapper                | [`0xeda5b00fb33b13c730d004cf5d1ada1ac191ddc2`](https://ftmscan.com/address/0xeda5b00fb33b13c730d004cf5d1ada1ac191ddc2)                                                                                        |
 | VRF Coordinator            | [`0xd5D517aBE5cF79B7e95eC98dB0f0277788aFF634`](https://ftmscan.com/address/0xd5d517abe5cf79b7e95ec98db0f0277788aff634)                                                                                        |
 | Wrapper Premium Percentage | 0                                                                                                                                                                                                             |
 | Coordinator Flat Fee       | 0.0005 LINK                                                                                                                                                                                                   |
 | Maximum Confirmations      | 200                                                                                                                                                                                                           |
 | Maximum Random Values      | 10                                                                                                                                                                                                            |
-| Wrapper Gas overhead       | 0                                                                                                                                                                                                             |
-| Coordinator Gas Overhead   | 0                                                                                                                                                                                                             |
+| Wrapper Gas overhead       | 30000                                                                                                                                                                                                         |
+| Coordinator Gas Overhead   | 90000                                                                                                                                                                                                         |
 
 ### Fantom Testnet
 

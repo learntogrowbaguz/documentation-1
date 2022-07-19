@@ -23,7 +23,7 @@
       },
       {
         "source": "/vrf",
-        "destination": "/docs/get-a-random-number/",
+        "destination": "/docs/vrf/v2/introduction/",
         "type": 301
       },
       {
@@ -282,6 +282,11 @@
       {
         "source": "/docs/vrf-contracts/",
         "destination": "/docs/vrf/v2/subscription/configuration/",
+        "type": 301
+      },
+      {
+        "source": "/docs/chainlink-vrf/",
+        "destination": "/docs/vrf/v2/introduction/",
         "type": 301
       }
     ]

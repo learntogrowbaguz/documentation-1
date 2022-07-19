@@ -2,7 +2,7 @@
 layout: nodes.liquid
 section: ethereum
 date: Last Modified
-title: ' Subscription Model'
+title: ' Subscription Method'
 permalink: 'docs/vrf/v2/subscription/'
 whatsnext:
   {
@@ -10,8 +10,8 @@ whatsnext:
     'Configuration': '/docs/vrf/v2/subscription/configuration/',
   }
 metadata:
-  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Subscription model'
-  description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2(an RNG). This guide uses the subscription model.'
+  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Subscription method'
+  description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2(an RNG). This guide uses the subscription method.'
 ---
 
 > ℹ️ You are viewing the VRF v2 guide.
@@ -31,7 +31,7 @@ metadata:
 
 ## Overview
 
-This section explains how to generate random numbers using the subscription model.
+This section explains how to generate random numbers using the subscription method.
 
 <p>
   https://www.youtube.com/watch?v=rdJ5d8j1RCg
@@ -41,7 +41,7 @@ This section explains how to generate random numbers using the subscription mode
 
 ### End To End Diagram
 
-![Vrf v2 subscription model end to end diagram](/images/vrf/v2-subscription-e2e.png)
+![Vrf v2 subscription method end to end diagram](/images/vrf/v2-subscription-e2e.png)
 
 Two types of accounts exist in the Ethereum ecosystem:
 
@@ -95,7 +95,7 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
 
 3. The event is picked up by the VRF node and will wait for the specified number of block confirmations to respond back to the VRF coordinator with the random values and a proof.
 
-4. The VRF coordinator verifies the proof on-chain then calls back the consuming contract `fulfillRandomWords` function.
+4. The VRF coordinator verifies the proof on-chain then calls back the consumer contract `fulfillRandomWords` function.
    After the request is complete, the final gas cost is recorded based on how much gas is required for the verification and callback. The total gas cost in wei for your request uses the following formula:
 
    ```

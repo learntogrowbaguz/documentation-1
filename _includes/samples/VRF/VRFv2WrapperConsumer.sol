@@ -82,4 +82,12 @@ contract VRFv2WrapperConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
         RequestStatus memory request = s_requests[_requestId];
         return (request.paid, request.fulfilled, request.randomWords);
     }
+
+    /**
+     * Allow withdraw of Link tokens from the contract
+     */
+    function withdrawLink() public onlyOwner {
+        LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
+        require(link.transfer(msg.sender, link.balanceOf(address(this))), 'Unable to transfer');
+    }
 }

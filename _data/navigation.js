@@ -186,10 +186,10 @@ module.exports = {
         contents: [
           {
             title: 'Introduction to Chainlink VRF',
-            url: '/docs/chainlink-vrf/',
+            url: '/docs/vrf/v2/introduction/',
           },
           {
-            title: 'Subscription model',
+            title: 'Method 1: Subscription',
             url: '/docs/vrf/v2/subscription/',
             children: [
               {
@@ -211,7 +211,7 @@ module.exports = {
             ],
           },
           {
-            title: 'Wrapper model (one-off)',
+            title: 'Method 2: Wrapper (one-off)',
             url: '/docs/vrf/v2/wrapper/',
             children: [
               {
