@@ -230,11 +230,11 @@ module.exports = {
           },
           {
             title: 'Security Considerations',
-            url: '/docs/vrf-security-considerations/',
+            url: '/docs/vrf/v2/security/',
           },
           {
             title: 'Best Practices',
-            url: '/docs/chainlink-vrf-best-practices/',
+            url: '/docs/vrf/v2/best-practices/',
           },
         ],
       },

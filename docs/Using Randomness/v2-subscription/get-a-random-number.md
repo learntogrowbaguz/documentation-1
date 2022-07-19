@@ -7,8 +7,8 @@ permalink: 'docs/vrf/v2/subscription/get-a-random-number/'
 whatsnext:
   {
     'More examples': '/docs/vrf/v2/subscription/more-examples/',
-    'Security Considerations': '/docs/vrf-security-considerations/',
-    'Best Practices': '/docs/chainlink-vrf-best-practices/',
+    'Security Considerations': '/docs/vrf/v2/security/',
+    'Best Practices': '/docs/vrf/v2/best-practices/',
     'Migrating from VRF v1 to v2': '/docs/vrf/v2/subscription/migration-v1-v2/',
     'Configuration': '/docs/vrf/v2/subscription/configuration/',
   }
@@ -119,7 +119,7 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 You deployed a simple contract that can request and receive random values from Chainlink VRF. To see more advanced examples where the contract can complete the entire process including subscription setup and management, see the [Example Contracts](/docs/chainlink-vrf/example-contracts/) page.
 
 > 📘 Note on Requesting Randomness
-> Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf-security-considerations/) page.
+> Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf/v2/security/) page.
 
 ## Analyzing the contract
 
@@ -152,9 +152,11 @@ The contract includes the following functions:
 
 - `fulfillRandomWords()`: Receives random values and stores them with your contract.
 
+- `getRequestStatus()`: Retrive request details for a given `_requestId`.
+
 > 🚧 Security Considerations
 >
-> Be sure to review your contracts to make sure they follow the best practices on the [security considerations](/docs/vrf-security-considerations/) page.
+> Be sure to review your contracts to make sure they follow the best practices on the [security considerations](/docs/vrf/v2/security/) page.
 
 ## Clean up
 

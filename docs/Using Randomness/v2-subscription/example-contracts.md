@@ -6,8 +6,8 @@ title: 'More Examples'
 permalink: 'docs/vrf/v2/subscription/more-examples/'
 whatsnext:
   {
-    'Security Considerations': '/docs/vrf-security-considerations/',
-    'Best Practices': '/docs/chainlink-vrf-best-practices/',
+    'Security Considerations': '/docs/vrf/v2/security/',
+    'Best Practices': '/docs/vrf/v2/best-practices/',
     'Migrating from VRF v1 to v2': '/docs/vrf/v2/subscription/migration-v1-v2/',
     'Configuration': '/docs/vrf/v2/subscription/configuration/',
   }
@@ -96,4 +96,4 @@ Add this function to your contracts if you need to provide funding simultaneousl
 
 > 🚧 Security Considerations
 >
-> Be sure to review your contract with the [security considerations](/docs/vrf-security-considerations/) in mind.
+> Be sure to review your contract with the [security considerations](/docs/vrf/v2/security/) in mind.

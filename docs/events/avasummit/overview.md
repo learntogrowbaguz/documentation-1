@@ -125,7 +125,7 @@ Below a summary of the configuration of Chainlink VRF on Avalanche Fuji Testnet.
 | LINK Token            | [`0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846`](https://testnet.snowtrace.io/token/0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846) |
 | VRF Coordinator       | [`0x2eD832Ba664535e5886b75D64C46EB9a228C2610`](https://testnet.snowtrace.io/token/0x2eD832Ba664535e5886b75D64C46EB9a228C2610) |
 | 300 gwei Key Hash     | `0x354d2f95da55398f44b7cff77da56283d9c6c829a4bdf1bbcaf2ad6a4d081f61`                                                          |
-| Premium               | 0.0005 LINK                                                                                                                     |
+| Premium               | 0.0005 LINK                                                                                                                   |
 | Minimum Confirmations | 1                                                                                                                             |
 | Maximum Confirmations | 200                                                                                                                           |
 | Maximum Random Values | 500                                                                                                                           |
@@ -138,7 +138,7 @@ When you are done with your contracts and the subscription, run the `cancelSubsc
 
 When you create your own contracts that use Chainlink VRF, always review them with the latest security considerations and best practices in mind.
 
-- [Security Considerations](/docs/vrf-security-considerations/).
-- [Best Practices](/docs/chainlink-vrf-best-practices/).
+- [Security Considerations](/docs/vrf/v2/security/).
+- [Best Practices](/docs/vrf/v2/best-practices/).
 
 If you have questions, post them to [Stackoverflow](https://stackoverflow.com/questions/tagged/chainlink) or join our [Discord](https://discord.com/invite/aSK4zew) to participate in technical discussions.

@@ -3,7 +3,7 @@ layout: nodes.liquid
 section: ethereum
 date: Last Modified
 title: 'VRF Security Considerations'
-permalink: 'docs/vrf-security-considerations/'
+permalink: 'docs/vrf/v2/security/'
 ---
 
 > 📘 You are viewing the VRF v2 guide.
@@ -74,4 +74,8 @@ If your `fulfillRandomWords()` implementation reverts, the VRF service will not 
 
 ## Use `VRFConsumerBaseV2` in your contract, to interact with the VRF service
 
-If you implement the [Subscription Model](/docs/vrf/v2/subscription/) then use `VRFConsumerBaseV2`. It includes a check to ensure the randomness is fulfilled by `VRFCoordinatorV2`. For this reason, it is a best practice to inherit from `VRFConsumerBaseV2`. Similarly, don't override `rawFulfillRandomness`.
+If you implement the [Subscription Method](/docs/vrf/v2/subscription/) then use `VRFConsumerBaseV2`. It includes a check to ensure the randomness is fulfilled by `VRFCoordinatorV2`. For this reason, it is a best practice to inherit from `VRFConsumerBaseV2`. Similarly, don't override `rawFulfillRandomness`.
+
+## Use `VRFv2WrapperConsumer.sol` in your contract, to interact with the VRF service
+
+If you implement the [Wrapper Method](/docs/vrf/v2/wrapper/) then use `VRFv2WrapperConsumer`. It includes a check to ensure the randomness is fulfilled by `VRFV2Wrapper`. For this reason, it is a best practice to inherit from `VRFv2WrapperConsumer`. Similarly, don't override `rawFulfillRandomWords`.

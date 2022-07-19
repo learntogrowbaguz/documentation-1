@@ -8,9 +8,9 @@ excerpt: 'Using Chainlink VRF'
 whatsnext:
   {
     'Get a Random Number': '/docs/vrf/v2/subscription/get-a-random-number/',
-    'Example Contracts': '/docs/chainlink-vrf/example-contracts/',
-    'Security Considerations': '/docs/vrf-security-considerations/',
-    'Best Practices': '/docs/chainlink-vrf-best-practices/',
+    'Example Contracts': '/docs/vrf/v2/subscription/more-examples/',
+    'Security Considerations': '/docs/vrf/v2/security/',
+    'Best Practices': '/docs/vrf/v2/best-practices/',
     'Configuration': '/docs/vrf/v2/subscription/configuration/',
   }
 metadata:

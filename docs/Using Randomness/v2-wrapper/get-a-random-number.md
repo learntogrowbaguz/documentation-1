@@ -6,8 +6,8 @@ title: 'Get a Random Number'
 permalink: 'docs/vrf/v2/wrapper/get-a-random-number/'
 whatsnext:
   {
-    'Security Considerations': '/docs/vrf-security-considerations/',
-    'Best Practices': '/docs/chainlink-vrf-best-practices/',
+    'Security Considerations': '/docs/vrf/v2/security/',
+    'Best Practices': '/docs/vrf/v2/best-practices/',
     'Migrating from VRF v1 to v2': '/docs/vrf/v2/wrapper/migration-v1-v2/',
     'Configuration': '/docs/vrf/v2/wrapper/configuration/',
   }
@@ -85,7 +85,7 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 1. Call `getRequestStatus()` specifying the `requestId` to display the random words.
 
 > 📘 Note on Requesting Randomness
-> Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf-security-considerations/) page.
+> Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf/v2/security/) page.
 
 ## Analyzing the contract
 
@@ -114,12 +114,16 @@ The contract includes the following functions:
 
 - `fulfillRandomWords()`: Receives random values and stores them with your contract.
 
+- `getRequestStatus()`: Retrive request details for a given `_requestId`.
+
+- `withdrawLink()`: At any time, the owner of the contract can withdraw outstanding LINK balance from it.
+
 > 🚧 Security Considerations
 >
-> Be sure to review your contracts to make sure they follow the best practices on the [security considerations](/docs/vrf-security-considerations/) page.
+> Be sure to review your contracts to make sure they follow the best practices on the [security considerations](/docs/vrf/v2/security/) page.
 
 ## Clean up
 
 After you are done with this contract, you can retrieve the remaining testnet LINK to use with other examples.
 
-1. Call `withdrawLink()`. MetaMask opens and asks you to confirm the transaction. After you approve the transaction, the remaining LINK will be transfered from your consumer contract to your wallet address.
+1. Call `withdrawLink()` function. MetaMask opens and asks you to confirm the transaction. After you approve the transaction, the remaining LINK will be transfered from your consumer contract to your wallet address.

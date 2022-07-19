@@ -288,6 +288,16 @@
         "source": "/docs/chainlink-vrf/",
         "destination": "/docs/vrf/v2/introduction/",
         "type": 301
+      },
+      {
+        "source": "/docs/vrf-security-considerations/",
+        "destination": "/docs/vrf/v2/security/",
+        "type": 301
+      },
+      {
+        "source": "/docs/chainlink-vrf-best-practices/",
+        "destination": "/docs/vrf/v2/best-practices/",
+        "type": 301
       }
     ]
   }

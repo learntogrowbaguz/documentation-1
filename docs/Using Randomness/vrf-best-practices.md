@@ -3,7 +3,7 @@ layout: nodes.liquid
 section: ethereum
 date: Last Modified
 title: 'VRF Best Practices'
-permalink: 'docs/chainlink-vrf-best-practices/'
+permalink: 'docs/vrf/v2/best-practices/'
 metadata:
   title: 'Chainlink VRF API Reference'
   description: 'Best pracices for using Chainlink VRF.'
