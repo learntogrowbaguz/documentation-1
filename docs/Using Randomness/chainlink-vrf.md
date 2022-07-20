@@ -73,6 +73,9 @@ Chainlink VRF v2 is currently available on the following networks:
   - Fantom Mainnet
   - Fantom Testnet
 
-Depending on the method method that you choose: See the [Subscription Configuration](/docs/vrf/v2/subscription/configuration/) or the [Wrapper Configuration](/docs/vrf/v2/wrapper/configuration/) pages for a complete list of contract addresses and gas price limits.
+The contract addresses and gas price limits are different depending on which method you use to get randomness. You can find the configuration, addresses, and limits for each method on the following pages:
+
+- [Subscription Configuration](/docs/vrf/v2/subscription/configuration/)
+- [Wrapper Configuration](/docs/vrf/v2/wrapper/configuration/)
 
 To learn when VRF v2 becomes available on more networks, follow us on [Twitter](https://twitter.com/chainlink) or sign up for our [mailing list](/docs/developer-communications/).

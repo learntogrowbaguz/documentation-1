@@ -20,16 +20,14 @@ metadata:
 
 **Table of contents**
 
-- [Overview](#overview)
 - [Concepts](#concepts)
   - [End To End Diagram](#end-to-end-diagram)
   - [VRF Wrapper](#vrf-wrapper)
   - [Request and Receive Data](#request-and-receive-data)
   - [Limits](#limits)
 
-## Overview
 
-This section explains how to generate random numbers using the wrapper method. This method doesn't require managing subscriptions and is more suited to one-off requests for randomness.
+This section explains how to generate random numbers using the wrapper method. This method doesn't require managing subscriptions and is more suited to one-off requests for randomness. To use the subscription method instead, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
 
 ## Concepts
 

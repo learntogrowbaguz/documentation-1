@@ -2,7 +2,7 @@
 layout: nodes.liquid
 section: ethereum
 date: Last Modified
-title: ' Subscription Method'
+title: 'Subscription Method'
 permalink: 'docs/vrf/v2/subscription/'
 whatsnext:
   {
@@ -20,7 +20,6 @@ metadata:
 
 **Table of contents**
 
-- [Overview](#overview)
 - [Concepts](#concepts)
   - [End To End Diagram](#end-to-end-diagram)
   - [Subscriptions](#subscriptions)
@@ -29,9 +28,8 @@ metadata:
     - [Subscription limits](#subscription-limits)
     - [Coordinator contract limits](#coordinator-contract-limits)
 
-## Overview
 
-This section explains how to generate random numbers using the subscription method.
+This section explains how to generate random numbers using the subscription method. To learn how to request random numbers without a subscription, see the [Wrapper Method](/docs/vrf/v2/wrapper/) guide.
 
 <p>
   https://www.youtube.com/watch?v=rdJ5d8j1RCg
