@@ -78,4 +78,4 @@ If you implement the [Subscription Method](/docs/vrf/v2/subscription/) then use 
 
 ## Use `VRFv2WrapperConsumer.sol` in your contract, to interact with the VRF service
 
-If you implement the [Wrapper Method](/docs/vrf/v2/wrapper/) then use `VRFv2WrapperConsumer`. It includes a check to ensure the randomness is fulfilled by `VRFV2Wrapper`. For this reason, it is a best practice to inherit from `VRFv2WrapperConsumer`. Similarly, don't override `rawFulfillRandomWords`.
+If you implement the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) then use `VRFv2WrapperConsumer`. It includes a check to ensure the randomness is fulfilled by `VRFV2Wrapper`. For this reason, it is a best practice to inherit from `VRFv2WrapperConsumer`. Similarly, don't override `rawFulfillRandomWords`.

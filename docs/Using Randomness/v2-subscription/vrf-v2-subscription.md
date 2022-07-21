@@ -29,7 +29,7 @@ metadata:
     - [Coordinator contract limits](#coordinator-contract-limits)
 
 
-This section explains how to generate random numbers using the subscription method. To learn how to request random numbers without a subscription, see the [Wrapper Method](/docs/vrf/v2/wrapper/) guide.
+This section explains how to generate random numbers using the subscription method. To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
 
 <p>
   https://www.youtube.com/watch?v=rdJ5d8j1RCg

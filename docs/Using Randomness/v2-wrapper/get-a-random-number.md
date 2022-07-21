@@ -3,16 +3,16 @@ layout: nodes.liquid
 section: ethereum
 date: Last Modified
 title: 'Get a Random Number'
-permalink: 'docs/vrf/v2/wrapper/get-a-random-number/'
+permalink: 'docs/vrf/v2/ad-hoc/get-a-random-number/'
 whatsnext:
   {
     'Security Considerations': '/docs/vrf/v2/security/',
     'Best Practices': '/docs/vrf/v2/best-practices/',
-    'Migrating from VRF v1 to v2': '/docs/vrf/v2/wrapper/migration-v1-v2/',
-    'Configuration': '/docs/vrf/v2/wrapper/configuration/',
+    'Migrating from VRF v1 to v2': '/docs/vrf/v2/ad-hoc/migration-v1-v2/',
+    'Configuration': '/docs/vrf/v2/ad-hoc/configuration/',
   }
 metadata:
-  description: 'How to generate a random number inside a smart contract using Chainlink VRF.'
+  description: 'How to generate a random number inside a smart contract using Chainlink VRF v2 - ad-hoc method.'
 ---
 
 > ℹ️ You are viewing the VRF v2 guide.
@@ -42,25 +42,25 @@ If you are new to developing smart contracts on Ethereum, see the [Getting Start
 
 ## Create and deploy a VRF v2 compatible contract
 
-For this example, use the [VRFv2WrapperConsumer.sol](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2WrapperConsumer.sol) sample contract. This contract imports the following dependencies:
+For this example, use the [VRFv2AdHocConsumer.sol](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol) sample contract. This contract imports the following dependencies:
 
-- `VRFV2WrapperConsumerBase.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/dev/VRFV2WrapperConsumerBase.sol)
+- `VRFV2WrapperConsumerBase.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol)
 - `ConfirmedOwner.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/ConfirmedOwner.sol)
 
-The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations` and number of random words `numWords`. The VRF Wrapper address is directly passed in the constructor. You can change these parameters if you want to experiment on different testnets.
+The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations` and number of random words `numWords`, VRF v2 Wrapper address `wrapperAddress` and link token address `linkAddress`. You can change these parameters if you want to experiment on different testnets.
 
 Build and deploy the contract on Rinkeby.
 
-1. Open the `VRFv2WrapperConsumer.sol`[(link)](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2WrapperConsumer.sol) contract in Remix.
+1. Open the `VRFv2AdHocConsumer.sol`[(link)](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol) contract in Remix.
 
 <div class="remix-callout">
-      <a href="https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2WrapperConsumer.sol" target="_blank" >Open in Remix</a>
+      <a href="https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol" target="_blank" >Open in Remix</a>
       <a href="/docs/conceptual-overview/#what-is-remix">What is Remix?</a>
 </div>
 
-1. On the **Compile** tab in Remix, compile the `VRFv2WrapperConsumer.sol` contract.
+1. On the **Compile** tab in Remix, compile the `VRFv2AdHocConsumer` contract.
 
-1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Web3 Environment**, select the `VRFv2WrapperConsumer` contract from the contract list.
+1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Web3 Environment**, select the `VRFv2AdHocConsumer` contract from the contract list.
 
 1. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
 
@@ -92,17 +92,17 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 In this example, the consumer contract uses static configuration parameters.
 
 ```solidity
-{% include 'samples/VRF/VRFv2WrapperConsumer.sol' %}
+{% include 'samples/VRF/VRFv2AdHocConsumer.sol' %}
 ```
 
 <div class="remix-callout">
-      <a href="https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2WrapperConsumer.sol" target="_blank" >Open in Remix</a>
+      <a href="https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol" target="_blank" >Open in Remix</a>
       <a href="/docs/conceptual-overview/#what-is-remix">What is Remix?</a>
 </div>
 
-The parameters define how your requests will be processed. You can find the values for your network in the [Configuration](/docs/vrf/v2/wrapper/configuration/) page.
+The parameters define how your requests will be processed. You can find the values for your network in the [Configuration](/docs/vrf/v2/ad-hoc/configuration/) page.
 
-- `uint32 callbackGasLimit`: The limit for how much gas to use for the callback request to your contract's `fulfillRandomWords()` function. It must be less than the `maxGasLimit` limit on the coordinator contract minus the `wrapperGasOverhead` (see [Wrapper limits](/docs/vrf/v2/wrapper/#limits) for more details). Adjust this value for larger requests depending on how your `fulfillRandomWords()` function processes and stores the received random values. If your `callbackGasLimit` is not sufficient, the callback will fail while your consumer contract is still charged for the work done to generate your requested random values.
+- `uint32 callbackGasLimit`: The limit for how much gas to use for the callback request to your contract's `fulfillRandomWords()` function. It must be less than the `maxGasLimit` limit on the coordinator contract minus the `wrapperGasOverhead` (see [VRF v2 Ad-hoc limits](/docs/vrf/v2/ad-hoc/#limits) for more details). Adjust this value for larger requests depending on how your `fulfillRandomWords()` function processes and stores the received random values. If your `callbackGasLimit` is not sufficient, the callback will fail while your consumer contract is still charged for the work done to generate your requested random values.
 
 - `uint16 requestConfirmations`: How many confirmations the Chainlink node should wait before responding. The longer the node waits, the more secure the random value is. It must be greater than the `minimumRequestBlockConfirmations` limit on the coordinator contract.
 
@@ -110,7 +110,7 @@ The parameters define how your requests will be processed. You can find the valu
 
 The contract includes the following functions:
 
-- `requestRandomWords()`: Takes your specified parameters and submits the request to the VRF wrapper contract.
+- `requestRandomWords()`: Takes your specified parameters and submits the request to the VRF v2 Wrapper contract.
 
 - `fulfillRandomWords()`: Receives random values and stores them with your contract.
 

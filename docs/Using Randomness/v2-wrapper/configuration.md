@@ -3,7 +3,7 @@ layout: nodes.liquid
 section: ethereum
 date: Last Modified
 title: 'Configuration'
-permalink: 'docs/vrf/v2/wrapper/configuration/'
+permalink: 'docs/vrf/v2/ad-hoc/configuration/'
 metadata:
   title: 'Chainlink VRF Contract Addresses'
   linkToWallet: true
@@ -21,10 +21,10 @@ For implementation details, read [Introduction to Chainlink VRF](/docs/chainlink
 
 ## Wrapper Parameters
 
-These parameters are configured in the wrapper contract. You can view these values by running `getConfig` on the wrapper or by viewing the wrapper contract in a blockchain explorer.
+These parameters are configured in the VRF v2 Wrapper contract. You can view these values by running `getConfig` on the VRF v2 Wrapper or by viewing the VRF v2 Wrapper contract in a blockchain explorer.
 
-- `uint32 stalenessSeconds`: How long the wrapper waits until we consider the ETH/LINK price used for converting gas costs to LINK is stale and use `fallbackWeiPerUnitLink`.
-- `uint32 wrapperGasOverhead`: The gas overhead of the wrapper's `fulfillRandomWords` function.
+- `uint32 stalenessSeconds`: How long the VRF v2 Wrapper waits until we consider the ETH/LINK price used for converting gas costs to LINK is stale and use `fallbackWeiPerUnitLink`.
+- `uint32 wrapperGasOverhead`: The gas overhead of the VRF v2 Wrapper's `fulfillRandomWords` function.
 - `uint32 coordinatorGasOverhead`: The gas overhead of the coordinator's `fulfillRandomWords` function.
 - `uint8 maxNumWords`: Maximum number of words that can be requested in a single wrapped VRF request.
 
@@ -33,16 +33,16 @@ These parameters are configured in the wrapper contract. You can view these valu
 Some parameters are important to know and are configured in the coordinator contract. You can view these values by running `getConfig` on the coordinator or by viewing the coordinator contract in a blockchain explorer.
 
 - `uint16 minimumRequestConfirmations`: The minimum number of confirmation blocks on VRF requests before oracles respond
-- `uint32 maxGasLimit`: The maximum gas limit supported for a `fulfillRandomWords` callback. Note that you still need to substract the `wrapperGasOverhead` for the accurate limit, as explained in [Wrapper limits](/docs/vrf/v2/wrapper/#limits).
+- `uint32 maxGasLimit`: The maximum gas limit supported for a `fulfillRandomWords` callback. Note that you still need to substract the `wrapperGasOverhead` for the accurate limit, as explained in [Ad-hoc limits](/docs/vrf/v2/ad-hoc/#limits).
 
 ## Fee parameters
 
-Fee parameters are configured in the wrapper and the coordinator contracts and specify the premium you pay per request in addition to the gas cost for the transaction. You can view them by running `getConfig` on the wrapper:
+Fee parameters are configured in the VRF v2 Wrapper and the VRF v2 Coordinator contracts and specify the premium you pay per request in addition to the gas cost for the transaction. You can view them by running `getConfig` on the VRF v2 Wrapper:
 
 - The `uint32 fulfillmentFlatFeeLinkPPM` parameter is a flat fee and defines the fees per request specified in millionths of LINK.
 - The `uint8 wrapperPremiumPercentage` parameter defines the premium ratio in percentage. For example, a value of _0_ indicates no premium. A value of _15_ indicates a _15%_ premium.
 
-The details for calculating the total transaction cost can be found [here](/docs/vrf/v2/wrapper/#request-and-receive-data).
+The details for calculating the total transaction cost can be found [here](/docs/vrf/v2/ad-hoc/#request-and-receive-data).
 
 ## Configurations
 

@@ -3,7 +3,7 @@
 pragma solidity ^0.8.7;
 
 import '@chainlink/contracts/src/v0.8/ConfirmedOwner.sol';
-import 'https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/dev/VRFV2WrapperConsumerBase.sol';
+import '@chainlink/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol';
 
 /**
  * Request testnet LINK and ETH here: https://faucets.chain.link/
@@ -15,7 +15,7 @@ import 'https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src
  * PLEASE DO NOT USE THIS CODE IN PRODUCTION.
  */
 
-contract VRFv2WrapperConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
+contract VRFv2AdHocConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
     event WrappedRequestSent(uint256 requestId, uint32 numWords);
     event WrappedRequestFulfilled(uint256 requestId, uint256[] randomWords, uint256 payment);
 
@@ -40,15 +40,13 @@ contract VRFv2WrapperConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
     // Cannot exceed VRFCoordinatorV2.MAX_NUM_WORDS.
     uint32 numWords = 2;
 
-    /**
-     * HARDCODED FOR RINKEBY
-     * LINK: 0x01BE23585060835E02B77ef475b0Cc51aA1e0709
-     * WRAPPER: 0xB93D75239C321A1EAD2E845E369a6f4fA2CdAed4
-     */
-    constructor()
-        ConfirmedOwner(msg.sender)
-        VRFV2WrapperConsumerBase(0x01BE23585060835E02B77ef475b0Cc51aA1e0709, 0xB93D75239C321A1EAD2E845E369a6f4fA2CdAed4) // VRFV2WrapperConsumerBase(LINK, WRAPPER)
-    {}
+    // Address LINK - hardcoded for Rinkeby
+    address linkAddress = 0x01BE23585060835E02B77ef475b0Cc51aA1e0709;
+
+    // address WRAPPER - hardcoded for Rinkeby
+    address wrapperAddress = 0xB93D75239C321A1EAD2E845E369a6f4fA2CdAed4;
+
+    constructor() ConfirmedOwner(msg.sender) VRFV2WrapperConsumerBase(linkAddress, wrapperAddress) {}
 
     function requestRandomWords() external onlyOwner returns (uint256 requestId) {
         requestId = requestRandomness(callbackGasLimit, requestConfirmations, numWords);
@@ -87,7 +85,7 @@ contract VRFv2WrapperConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
      * Allow withdraw of Link tokens from the contract
      */
     function withdrawLink() public onlyOwner {
-        LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
+        LinkTokenInterface link = LinkTokenInterface(linkAddress);
         require(link.transfer(msg.sender, link.balanceOf(address(this))), 'Unable to transfer');
     }
 }

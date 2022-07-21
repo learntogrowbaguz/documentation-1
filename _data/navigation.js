@@ -211,20 +211,20 @@ module.exports = {
             ],
           },
           {
-            title: 'Method 2: Wrapper (one-off)',
-            url: '/docs/vrf/v2/wrapper/',
+            title: 'Method 2: Ad-hoc',
+            url: '/docs/vrf/v2/ad-hoc/',
             children: [
               {
                 title: 'Get a Random Number',
-                url: '/docs/vrf/v2/wrapper/get-a-random-number/',
+                url: '/docs/vrf/v2/ad-hoc/get-a-random-number/',
               },
               {
                 title: 'Configuration',
-                url: '/docs/vrf/v2/wrapper/configuration/',
+                url: '/docs/vrf/v2/ad-hoc/configuration/',
               },
               {
                 title: 'Migrating to VRF v2',
-                url: '/docs/vrf/v2/wrapper/migration-v1-v2/',
+                url: '/docs/vrf/v2/ad-hoc/migration-v1-v2/',
               },
             ],
           },
