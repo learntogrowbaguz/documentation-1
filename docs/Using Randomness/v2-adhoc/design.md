@@ -50,17 +50,19 @@ For Chainlink VRF v2 to fulfill your requests, you must have a sufficient amount
 
 - **Wrapper overhead gas:** The amount of gas used by the VRF Wrapper contract (see [here](#request-and-receive-data) fore more details on the design and VRF v2 Wrapper contract).
 
-These variables depend on current network conditions, your specified limit on callback gas, and the number of random values in your request. You define the limits you are willing to spend for the request with the following variable:
+The gas price depends on current network conditions. The callback gas depends on your callback function, and the number of random values in your request. You define the limits you are willing to spend for the request with the following variable:
 
 - **Callback gas limit:** Specifies the maximum amount of gas you are willing to spend on the callback request. Define this limit by specifying the `callbackGasLimit` value in your request.
 
-> ℹ️ Note on gas costs.
+> ℹ️ Note on transaction costs.
 >
 > Because the consuming contract directly pays for LINK, The cost is calculated during the request and not when the randomness is fulfilled (during the callback).
 > It is strongly recommended to test several times your callback function and correctly estimate the callback gas limit. In fact:
 >
 > - If the gas limit is underestimated: the callback will fail but your consuming contract is still charged for the work done to generate the requested random values.
 > - If the gas limit is overestimated: the callback function will be executed but you won't get refunded for the excess gas amount that you paid.
+>
+> Also, make sure that your consuming contract are funded with enough LINK tokens to cover the transaction costs. In fact, if the consuming contract doesn't have enough LINK tokens then your request will revert.
 
 ### Request and Receive Data
 

@@ -61,7 +61,6 @@ contract VRFv2AdHocConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
 
     function fulfillRandomWords(uint256 _requestId, uint256[] memory _randomWords) internal override {
         require(s_requests[_requestId].paid > 0, 'request not found');
-        require(!s_requests[_requestId].fulfilled, 'request already fulfilled');
         s_requests[_requestId].fulfilled = true;
         s_requests[_requestId].randomWords = _randomWords;
         emit WrappedRequestFulfilled(_requestId, _randomWords, s_requests[_requestId].paid);

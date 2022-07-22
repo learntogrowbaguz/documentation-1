@@ -62,7 +62,7 @@ For Chainlink VRF v2 to fulfill your requests, you must maintain a sufficient am
 
 - **Verification gas:** The amount of gas used to verify randomness on-chain.
 
-These variables depend on current network conditions, your specified limit on callback gas, and the number of random values in your request. The cost of each request is final only after the transaction is complete, but you define the limits you are willing to spend for the request with the following variables:
+The gas price depends on current network conditions. The callback gas depends on your callback function, and the number of random values in your request. The cost of each request is final only after the transaction is complete, but you define the limits you are willing to spend for the request with the following variables:
 
 - **Gas lane:** The maximum gas price you are willing to pay for a request in wei. Define this limit by specifying the appropriate `keyHash` in your request. The limits of each gas lane are important for handling gas price spikes when Chainlink VRF bumps the gas price to fulfill your request quickly.
 
