@@ -59,7 +59,7 @@ Randomness, on the other hand, cannot be reference data. If the result of random
 ## 3. What is the payment process for generating a random number?
 
 VRF requests receive funding from subscription accounts. The [Subscription Manager](https://vrf.chain.link) lets you create an account and pre-pay for VRF requests, so that funding of all your application requests are managed in a single location.
-To learn more about VRF requests funding, see [Subscriptions](/docs/chainlink-vrf-v2-subscription/#subscriptions).
+To learn more about VRF requests funding, see [Subscriptions](/docs/vrf/v2/subscription/#subscriptions).
 
 ## 4. How can I use Chainlink VRF?
 
