@@ -62,7 +62,7 @@ The gas price depends on current network conditions. The callback gas depends on
 > - If the gas limit is underestimated: the callback will fail but your consuming contract is still charged for the work done to generate the requested random values.
 > - If the gas limit is overestimated: the callback function will be executed but you won't get refunded for the excess gas amount that you paid.
 >
-> Also, make sure that your consuming contract are funded with enough LINK tokens to cover the transaction costs. In fact, if the consuming contract doesn't have enough LINK tokens then your request will revert.
+> Also, make sure that your consuming contracts are funded with enough LINK tokens to cover the transaction costs. In fact, if the consuming contract doesn't have enough LINK tokens then your request will revert.
 
 ### Request and Receive Data
 
