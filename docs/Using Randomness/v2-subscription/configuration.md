@@ -13,11 +13,11 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
+> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 Chainlink VRF allows you to integrate provably fair and verifiably random data in your smart contract.
 
-For implementation details, read [Introduction to Chainlink VRF](/docs/chainlink-vrf/).
+For implementation details, read [Introduction to Chainlink VRF v2 Subscription method](/docs/vrf/v2/subscription/).
 
 ## Coordinator Parameters
 

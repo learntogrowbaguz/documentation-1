@@ -48,7 +48,7 @@ In this guide, you will learn about generating randomness on blockchains. This i
 
 ## 1. How is randomness generated on blockchains? What is Chainlink VRF?
 
-Randomness is very difficult to generate on blockchains. This is because every node on the blockchain must come to the same conclusion and form a consensus. Even though random numbers are versatile and useful in a variety of blockchain applications, they cannot be generated natively in smart contracts. The solution to this issue is [**Chainlink VRF**](../chainlink-vrf/), also known as Chainlink Verifiable Random Function.
+Randomness is very difficult to generate on blockchains. This is because every node on the blockchain must come to the same conclusion and form a consensus. Even though random numbers are versatile and useful in a variety of blockchain applications, they cannot be generated natively in smart contracts. The solution to this issue is [**Chainlink VRF**](/docs/vrf/v2/introduction/), also known as Chainlink Verifiable Random Function.
 
 ## 2. What is the Request and Receive cycle?
 

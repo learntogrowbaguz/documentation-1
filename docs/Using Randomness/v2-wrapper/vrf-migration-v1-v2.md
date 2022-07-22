@@ -8,7 +8,7 @@ permalink: 'docs/vrf/v2/ad-hoc/migration-v1-v2/'
 
 > ℹ️ You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
+> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 ## Comparison between VRF v1 and VRF v2 (Ad-hoc Method)
 

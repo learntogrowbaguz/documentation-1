@@ -14,7 +14,7 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
+> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 Chainlink VRF (Verifiable Random Function) is a provably fair and verifiable random number generator (RNG) that enables smart contracts to access random values without compromising security or usability.
 

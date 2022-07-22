@@ -17,7 +17,7 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
+> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 How you manage the subscription depends on your randomness needs. You can configure your subscriptions using the [Subscription Manager](https://vrf.chain.link), but these examples demonstrate how to create your subscription and add your consumer contracts programmatically. For these examples, the contract owns and manages the subscription. You can still view the subscriptions in the [Subscription Manager](https://vrf.chain.link). Any wallet can provide funding to those subscriptions.
 

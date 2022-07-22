@@ -13,11 +13,11 @@ metadata:
 
 > ℹ️ You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
+> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 Chainlink VRF allows you to integrate provably fair and verifiably random data in your smart contract.
 
-For implementation details, read [Introduction to Chainlink VRF](/docs/chainlink-vrf/).
+For implementation details, read [Introduction to Chainlink VRF v2 Ad-hoc method](/docs/vrf/v2/ad-hoc/).
 
 ## Wrapper Parameters
 
@@ -182,7 +182,7 @@ The details for calculating the total transaction cost can be found [here](/docs
 | Item                       | Value                                                                                                                                                                                                                      |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LINK Token                 | <a class="erc-token-address" id="43113_0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846" href="https://testnet.snowtrace.io/address/0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846">`0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846`</a> |
-| VRF Wrapper                | [`0x78b69899C8cD252126cBB1A50171ec37286C3877`](https://testnet.snowtrace.io/address/0x78b69899C8cD252126cBB1A50171ec37286C3877)                                                                                                    |
+| VRF Wrapper                | [`0x78b69899C8cD252126cBB1A50171ec37286C3877`](https://testnet.snowtrace.io/address/0x78b69899C8cD252126cBB1A50171ec37286C3877)                                                                                            |
 | VRF Coordinator            | [`0x2eD832Ba664535e5886b75D64C46EB9a228C2610`](https://testnet.snowtrace.io/address/0x2eD832Ba664535e5886b75D64C46EB9a228C2610)                                                                                            |
 | Wrapper Premium Percentage | 20                                                                                                                                                                                                                         |
 | Coordinator Flat Fee       | 0.005 LINK                                                                                                                                                                                                                 |

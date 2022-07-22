@@ -18,9 +18,9 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/chainlink-vrf/v1/).
+> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
-This guide explains how to get random values using a simple contract to request and receive random values from Chainlink VRF v2. For more advanced examples with programmatic subscription configuration, see the [Example Contracts](/docs/chainlink-vrf/example-contracts/) page. To explore more applications of VRF, refer to our [blog](https://blog.chain.link/).
+This guide explains how to get random values using a simple contract to request and receive random values from Chainlink VRF v2 using the Subscription method. For more advanced examples with programmatic subscription configuration, see the [More Examples](/docs/vrf/v2/subscription/more-examples/) page. To explore more applications of VRF, refer to our [blog](https://blog.chain.link/).
 
 **Table of contents**
 
@@ -116,7 +116,7 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 
 1. Call `getRequestStatus()` specifying the `requestId` to display the random words.
 
-You deployed a simple contract that can request and receive random values from Chainlink VRF. To see more advanced examples where the contract can complete the entire process including subscription setup and management, see the [Example Contracts](/docs/chainlink-vrf/example-contracts/) page.
+You deployed a simple contract that can request and receive random values from Chainlink VRF. To see more advanced examples where the contract can complete the entire process including subscription setup and management, see the [More Examples](/docs/vrf/v2/subscription/more-examples/) page.
 
 > 📘 Note on Requesting Randomness
 > Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf/v2/security/) page.
