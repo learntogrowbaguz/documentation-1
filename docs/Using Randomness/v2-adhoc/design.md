@@ -32,7 +32,7 @@ metadata:
 
 ## Overview
 
-This section explains how to generate random numbers using the ad-hoc method. This method doesn't require managing subscriptions and is more suited to one-off requests for randomness.
+This section explains how to generate random numbers using the ad-hoc method. This method doesn't require managing subscriptions and is more suited to one-off requests for randomness or situations where it is required to transfer the cost of VRF to end users as the cost is known at request time.
 
 ## Concepts
 
