@@ -12,6 +12,11 @@ permalink: 'docs/vrf/v2/subscription/migration-v1-v2/'
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
+**Table of contents**
+
+- [Comparison between VRF v1 and VRF v2 (Subscription method)](#comparison-between-vrf-v1-and-vrf-v2-subscription-method)
+- [Updating your applications to use VRF v2](#updating-your-applications-to-use-vrf-v2)
+
 ## Comparison between VRF v1 and VRF v2 (Subscription method)
 
 Chainlink VRF v2 includes several improvements and changes to the way you fund and request randomness for your smart contracts.

@@ -21,6 +21,13 @@ Chainlink VRF allows you to integrate provably fair and verifiably random data i
 
 For implementation details, read [Introduction to Chainlink VRF v2 Ad-hoc method](/docs/vrf/v2/ad-hoc/).
 
+**Table of contents**
+
+- [Wrapper Parameters](#wrapper-parameters)
+- [Coordinator Parameters](#coordinator-parameters)
+- [Fee Parameters](#fee-parameters)
+- [Configurations](#configurations)
+
 ## Wrapper Parameters
 
 These parameters are configured in the VRF v2 Wrapper contract. You can view these values by running `getConfig` on the VRF v2 Wrapper or by viewing the VRF v2 Wrapper contract in a blockchain explorer.
@@ -30,14 +37,14 @@ These parameters are configured in the VRF v2 Wrapper contract. You can view the
 - `uint32 coordinatorGasOverhead`: The gas overhead of the coordinator's `fulfillRandomWords` function.
 - `uint8 maxNumWords`: Maximum number of words that can be requested in a single wrapped VRF request.
 
-## Coordinator parameters
+## Coordinator Parameters
 
 Some parameters are important to know and are configured in the coordinator contract. You can view these values by running `getConfig` on the coordinator or by viewing the coordinator contract in a blockchain explorer.
 
 - `uint16 minimumRequestConfirmations`: The minimum number of confirmation blocks on VRF requests before oracles respond
 - `uint32 maxGasLimit`: The maximum gas limit supported for a `fulfillRandomWords` callback. Note that you still need to substract the `wrapperGasOverhead` for the accurate limit, as explained in [Ad-hoc limits](/docs/vrf/v2/ad-hoc/#limits).
 
-## Fee parameters
+## Fee Parameters
 
 Fee parameters are configured in the VRF v2 Wrapper and the VRF v2 Coordinator contracts and specify the premium you pay per request in addition to the gas cost for the transaction. You can view them by running `getConfig` on the VRF v2 Wrapper:
 

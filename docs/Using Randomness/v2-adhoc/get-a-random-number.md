@@ -49,7 +49,7 @@ For this example, use the [VRFv2AdHocConsumer.sol](https://remix.ethereum.org/#u
 - `VRFV2WrapperConsumerBase.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol)
 - `ConfirmedOwner.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/ConfirmedOwner.sol)
 
-The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations` and number of random words `numWords`, VRF v2 Wrapper address `wrapperAddress` and link token address `linkAddress`. You can change these parameters if you want to experiment on different testnets.
+The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`, number of random words `numWords`, VRF v2 Wrapper address `wrapperAddress` and link token address `linkAddress`. You can change these parameters if you want to experiment on different testnets.
 
 Build and deploy the contract on Rinkeby.
 

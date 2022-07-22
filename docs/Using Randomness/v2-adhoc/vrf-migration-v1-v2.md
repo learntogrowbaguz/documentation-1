@@ -12,7 +12,12 @@ permalink: 'docs/vrf/v2/ad-hoc/migration-v1-v2/'
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
-## Comparison between VRF v1 and VRF v2 (Ad-hoc Method)
+**Table of contents**
+
+- [Comparison between VRF v1 and VRF v2 (Ad-hoc method)](#comparison-between-vrf-v1-and-vrf-v2-ad-hoc-method)
+- [Updating your applications to use VRF v2](#updating-your-applications-to-use-vrf-v2)
+
+## Comparison between VRF v1 and VRF v2 (Ad-hoc method)
 
 The main similarity between VRF v1 and VRF v2 Ad-hoc method is that consuming contracts have to be funded with LINK in order to pay to request randomness. However, Chainlink VRF v2 includes several improvements.
 
