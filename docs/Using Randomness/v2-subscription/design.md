@@ -14,12 +14,15 @@ metadata:
   description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2(an RNG). This guide uses the subscription method.'
 ---
 
-> ℹ️ You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 **Table of contents**
 
+- [Overview](#overview)
 - [Concepts](#concepts)
   - [Subscriptions](#subscriptions)
   - [Request and Receive Data](#request-and-receive-data)
@@ -29,7 +32,9 @@ metadata:
     - [Subscription limits](#subscription-limits)
     - [Coordinator contract limits](#coordinator-contract-limits)
 
-This section explains how to generate random numbers using the subscription method. To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
+## Overview
+
+This section explains how to generate random numbers using the Subscription method.
 
 <p>
   https://www.youtube.com/watch?v=rdJ5d8j1RCg
@@ -45,17 +50,17 @@ Subscriptions have the following core concepts:
 
 - **Subscription id:** 64-bit unsigned integer representing the unique identifier of the subscription.
 - **Subscription accounts:** An account that holds LINK tokens and makes them available to fund requests to Chainlink VRF v2 coordinators.
-- **Subscription owner:** The wallet address that creates and manages a subscription account. Any account can add LINK to the subscription balance, but only the owner can add approved consumers or withdraw funds.
-- **Consumers:** Contracts that are approved to use funding from your subscription account.
+- **Subscription owner:** The wallet address that creates and manages a subscription account. Any account can add LINK to the subscription balance, but only the owner can add approved consuming contracts or withdraw funds.
+- **Consumers:** Consuming contracts that are approved to use funding from your subscription account.
 - **Subscription balance:** The amount of LINK maintained on your subscription account. Requests from consuming contracts will continue to be funded until the balance runs out, so be sure to maintain sufficient funds in your subscription balance to pay for the requests and keep your applications running.
 
 For Chainlink VRF v2 to fulfill your requests, you must maintain a sufficient amount of LINK in your subscription balance. Gas cost calculation includes the following variables:
 
-- **Gas price:** The current gas price, which fluctuates depending on network conditions
+- **Gas price:** The current gas price, which fluctuates depending on network conditions.
 
-- **Callback gas:** The amount of gas used for the callback request that returns your requested random values
+- **Callback gas:** The amount of gas used for the callback request that returns your requested random values.
 
-- **Verification gas:** The amount of gas used to verify randomness on-chain
+- **Verification gas:** The amount of gas used to verify randomness on-chain.
 
 These variables depend on current network conditions, your specified limit on callback gas, and the number of random values in your request. The cost of each request is final only after the transaction is complete, but you define the limits you are willing to spend for the request with the following variables:
 
@@ -93,7 +98,7 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
 
 2. The VRF coordinator emits an event.
 
-3. The event is picked up by the VRF node and will wait for the specified number of block confirmations to respond back to the VRF coordinator with the random values and a proof.
+3. The event is picked up by the VRF node and will wait for the specified number of block confirmations to respond back to the VRF coordinator with the random values and a proof (`requestConfirmations`).
 
 4. The VRF coordinator verifies the proof on-chain then calls back the consuming contract `fulfillRandomWords` function.
    After the request is complete, the final gas cost is recorded based on how much gas is required for the verification and callback. The total gas cost in wei for your request uses the following formula:
@@ -127,7 +132,7 @@ Each subscription has the following limits:
   (((Gas lane maximum * (Max verification gas + Callback gas limit)) / (1,000,000,000 Gwei/ETH)) / (ETH/LINK price)) + LINK premium = Minimum LINK
   ```
 
-- Each subscription supports up to 100 consuming contracts. If you need more than 100 consumers, create multiple subscriptions.
+- Each subscription supports up to 100 consuming contracts. If you need more than 100 consuming contracts, create multiple subscriptions.
 
 #### Coordinator contract limits
 

@@ -14,12 +14,15 @@ metadata:
   description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2(an RNG). This guide uses the ad-hoc method.'
 ---
 
-> ℹ️ You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Ad-hoc method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 **Table of contents**
 
+- [Overview](#overview)
 - [Concepts](#concepts)
   - [VRF Ad-hoc](#vrf-ad-hoc)
   - [Request and Receive Data](#request-and-receive-data)
@@ -27,13 +30,15 @@ metadata:
     - [Explanation](#explanation)
   - [Limits](#limits)
 
-This section explains how to generate random numbers using the ad-hoc method. This method doesn't require managing subscriptions and is more suited to one-off requests for randomness. To use the subscription method instead, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
+## Overview
+
+This section explains how to generate random numbers using the ad-hoc method. This method doesn't require managing subscriptions and is more suited to one-off requests for randomness.
 
 ## Concepts
 
 ### VRF Ad-hoc
 
-The VRF Wrapper provides an interface for consuming contracts, abstracting the VRF v2 Coordinator. Contrary to the [subscription method](/docs/vrf/v2/subscription/), users do not need to create subscriptions and pre-fund them: In fact, with the ad-hoc method, users have to directly fund their consuming contracts with LINK tokens before requesting for randomness.
+Contrary to the [subscription method](/docs/vrf/v2/subscription/), users do not need to create subscriptions and pre-fund them: In fact, with the Ad-hoc method, users have to directly fund their consuming contracts with LINK tokens before requesting for randomness.
 
 For Chainlink VRF v2 to fulfill your requests, you must have a sufficient amount of LINK in your consuming contract. Gas cost calculation includes the following variables:
 
@@ -43,7 +48,7 @@ For Chainlink VRF v2 to fulfill your requests, you must have a sufficient amount
 
 - **Verification gas:** The amount of gas used to verify randomness on-chain.
 
-- **Wrapper overhead gas:** The amount of gas used by the VRF Wrapper contract.
+- **Wrapper overhead gas:** The amount of gas used by the VRF Wrapper contract (see [here](#request-and-receive-data) fore more details on the design and VRF v2 Wrapper contract).
 
 These variables depend on current network conditions, your specified limit on callback gas, and the number of random values in your request. You define the limits you are willing to spend for the request with the following variable:
 
@@ -104,7 +109,7 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
 
 3. The VRF Wrapper VRF coordinator emits an event.
 
-4. The event is picked up by the VRF node and will wait for the specified number of block confirmations to respond back to the VRF coordinator with the random values and a proof.
+4. The event is picked up by the VRF node and will wait for the specified number of block confirmations to respond back to the VRF coordinator with the random values and a proof (`requestConfirmations`).
 
 5. The VRF coordinator verifies the proof on-chain then calls back the Wrapper contract `fulfillRandomWords` function.
 

@@ -6,9 +6,11 @@ title: 'Migrating to VRF v2'
 permalink: 'docs/vrf/v2/ad-hoc/migration-v1-v2/'
 ---
 
-> ℹ️ You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Ad-hoc method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 ## Comparison between VRF v1 and VRF v2 (Ad-hoc Method)
 

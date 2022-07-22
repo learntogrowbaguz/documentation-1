@@ -12,12 +12,14 @@ whatsnext:
     'Configuration': '/docs/vrf/v2/ad-hoc/configuration/',
   }
 metadata:
-  description: 'How to generate a random number inside a smart contract using Chainlink VRF v2 - ad-hoc method.'
+  description: 'How to generate a random number inside a smart contract using Chainlink VRF v2 - Ad-hoc method.'
 ---
 
-> ℹ️ You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Ad-hoc method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 This guide explains how to get random values using a simple contract to request and receive random values from Chainlink VRF v2 without managing a subscription. To explore more applications of VRF, refer to our [blog](https://blog.chain.link/).
 

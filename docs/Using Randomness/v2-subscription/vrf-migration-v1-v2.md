@@ -6,11 +6,13 @@ title: 'Migrating to VRF v2'
 permalink: 'docs/vrf/v2/subscription/migration-v1-v2/'
 ---
 
-> 📘 You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
-## Comparison between VRF v1 and VRF v2 (Subscription Model)
+## Comparison between VRF v1 and VRF v2 (Subscription method)
 
 Chainlink VRF v2 includes several improvements and changes to the way you fund and request randomness for your smart contracts.
 

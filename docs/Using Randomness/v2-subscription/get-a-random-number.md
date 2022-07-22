@@ -16,9 +16,11 @@ metadata:
   description: 'How to generate a random number inside a smart contract using Chainlink VRF.'
 ---
 
-> 📘 You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 This guide explains how to get random values using a simple contract to request and receive random values from Chainlink VRF v2 using the Subscription method. For more advanced examples with programmatic subscription configuration, see the [More Examples](/docs/vrf/v2/subscription/more-examples/) page. To explore more applications of VRF, refer to our [blog](https://blog.chain.link/).
 
@@ -59,7 +61,7 @@ For this example, create a new subscription on the Rinkeby testnet.
 
 1. Record your subscription ID, which you need for your consuming contract. You will add the consuming contract to your subscription later.
 
-You can always find your subscription IDs, balances, and consumers on the [Subscription Manager](https://vrf.chain.link/) page.
+You can always find your subscription IDs, balances, and consuming contracts on the [Subscription Manager](https://vrf.chain.link/) page.
 
 Now that you have a funded subscription account and your subscription ID, [create and deploy a VRF v2 compatible contract](#create-and-deploy-a-vrf-v2-compatible-contract).
 

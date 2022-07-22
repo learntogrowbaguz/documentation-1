@@ -15,9 +15,11 @@ metadata:
   description: 'Example contracts for managing a subscription and generating a random number inside a smart contract using Chainlink VRF.'
 ---
 
-> 📘 You are viewing the VRF v2 guide.
+> 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
+> - To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
+>
+> - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 How you manage the subscription depends on your randomness needs. You can configure your subscriptions using the [Subscription Manager](https://vrf.chain.link), but these examples demonstrate how to create your subscription and add your consuming contracts programmatically. For these examples, the contract owns and manages the subscription. You can still view the subscriptions in the [Subscription Manager](https://vrf.chain.link). Any wallet can provide funding to those subscriptions.
 
@@ -31,7 +33,7 @@ How you manage the subscription depends on your randomness needs. You can config
 
 Subscription configurations do not have to be static. You can change your subscription configuration dynamically by calling the following functions using the [VRFCoordinatorV2Interface](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol):
 
-- Change the list of approved subscription consumers with `addConsumer(uint64 subId, address consumer)` or `removeConsumer(uint64 subId, address consumer)`.
+- Change the list of approved subscription consuming contracts with `addConsumer(uint64 subId, address consumer)` or `removeConsumer(uint64 subId, address consumer)`.
 - Transfer the subscription ownership with `requestSubscriptionOwnerTransfer(uint64 subId, address newOwner)` and `acceptSubscriptionOwnerTransfer(uint64 subId)`.
 - View the subscription with `getSubscription(uint64 subId)`.
 - Cancel the subscription with `cancelSubscription(uint64 subId)`.
@@ -78,7 +80,7 @@ To use this contract, compile and deploy it in Remix.
 
 1. On the consuming contract, run the `requestRandomWords()` function to request and receive random values. The request might take several minutes to process. Track pending request status in the [Subscription Manager](https://vrf.chain.link) app.
 
-   The consuming contract can continue to make requests until your subscription balance runs out. The subscription manager contract must maintain sufficient balance in the subscription so that the consumers can continue to operate.
+   The consuming contract can continue to make requests until your subscription balance runs out. The subscription manager contract must maintain sufficient balance in the subscription so that the consuming contracts can continue to operate.
 
 1. When you are done with your contracts and the subscription, run the `cancelSubscription()` to close the subscription and send the remaining LINK to your wallet address. Specify the address of the receiving wallet.
 
