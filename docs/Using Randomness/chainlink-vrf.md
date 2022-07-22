@@ -27,7 +27,7 @@ Chainlink VRF (Verifiable Random Function) is a provably fair and verifiable ran
 
 ## Overview
 
-For each request, Chainlink VRF generates one or more random values and cryptographic proof of how those values were determined. The proof is published and verified on-chain before any consumer applications can use it. This process ensures that results cannot be tampered with or manipulated by any single entity including oracle operators, miners, users, or smart contract developers.
+For each request, Chainlink VRF generates one or more random values and cryptographic proof of how those values were determined. The proof is published and verified on-chain before any consuming applications can use it. This process ensures that results cannot be tampered with or manipulated by any single entity including oracle operators, miners, users, or smart contract developers.
 
 Use Chainlink VRF to build reliable smart contracts for any applications that rely on unpredictable outcomes:
 
@@ -41,7 +41,7 @@ To learn more about the benefits of Chainlink VRF v2, see our blog post [Chainli
 
 Chainlink VRF v2 offers two methods for requesting randomness:
 
-- [Subscription](/docs/vrf/v2/subscription/): Users create a subscription account and fund its balance with LINK tokens. Users can then link one or several consumer contracts to the subscription account. When the consumer contracts request randomness, the transaction costs are calculated once the randomness requests are fulfilled and the subscription balance is deducted accordingly. This mode allows the users to fund their use of Chainlink VRF from a single location.
+- [Subscription](/docs/vrf/v2/subscription/): Users create a subscription account and fund its balance with LINK tokens. Users can then link one or several consuming contracts to the subscription account. When the consuming contracts request randomness, the transaction costs are calculated once the randomness requests are fulfilled and the subscription balance is deducted accordingly. This mode allows the users to fund their use of Chainlink VRF from a single location.
 - [Ad-hoc](/docs/vrf/v2/ad-hoc/): Consuming contracts directly pay with LINK when they request for randomness. Hence users have to directly fund their consuming contracts and ensure there are enough LINK tokens to pay for randomness requests.
 
 ## Choosing the right method
@@ -49,11 +49,16 @@ Chainlink VRF v2 offers two methods for requesting randomness:
 Depending on your use case, one method might be more suitable than another. The recommendations are the following:
 
 - If your use case requires to regularly request for randomness then choose the subscription method. Otherwise , choose the ad-hoc method. The ad-hoc method is more suitable to one-off/seldom requests.
-- If you have several VRF consumer contracts then choose the subscription method.
+- If you have several VRF consuming contracts then choose the subscription method.
 - If you want more control on the maximum gas price to be paid and less gas overhead then choose the subscription method. You can read the [Subscription](/docs/vrf/v2/subscription/) and [Ad-hoc](/docs/vrf/v2/ad-hoc/) explanation pages to understand how the transaction costs are calculated.
-- There is an overhead with the ad-hoc method. Therefore, you can request up to 10 random words in a single request. While with the subscription method, you can request up to 200 random words depending on the network.
+- Due to an overhead with the ad-hoc method, you can request much more random words in a single request with the Subscription method than the Ad-hoc method. You can compare the maximum number of words per request and per method: [Subscription configuration](/docs/vrf/v2/subscription/configuration/#configurations) and [Ad-hoc configuration](/docs/vrf/v2/ad-hoc/configuration/#configurations).
 
 ## Supported networks
+
+The contract addresses and gas price limits are different depending on which method you use to get randomness. You can find the configuration, addresses, and limits for each method on the following pages:
+
+- [Subscription Configuration](/docs/vrf/v2/subscription/configuration/)
+- [Ad-hoc Configuration](/docs/vrf/v2/ad-hoc/configuration/)
 
 Chainlink VRF v2 is currently available on the following networks:
 
@@ -72,10 +77,5 @@ Chainlink VRF v2 is currently available on the following networks:
 - Fantom:
   - Fantom Mainnet
   - Fantom Testnet
-
-The contract addresses and gas price limits are different depending on which method you use to get randomness. You can find the configuration, addresses, and limits for each method on the following pages:
-
-- [Subscription Configuration](/docs/vrf/v2/subscription/configuration/)
-- [Ad-hoc Configuration](/docs/vrf/v2/ad-hoc/configuration/)
 
 To learn when VRF v2 becomes available on more networks, follow us on [Twitter](https://twitter.com/chainlink) or sign up for our [mailing list](/docs/developer-communications/).

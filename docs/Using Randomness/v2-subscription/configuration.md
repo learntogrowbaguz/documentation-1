@@ -31,6 +31,7 @@ These parameters are configured in the coordinator contract. You can view these 
 ## Fee parameters
 
 Fee parameters are configured in the coordinator contract and specify the premium you pay per request in addition to the gas cost for the transaction. You can view them by running `getFeeConfig` on the coordinator. The `uint32 fulfillmentFlatFeeLinkPPMTier1` parameter defines the fees per request specified in millionths of LINK.
+The details for calculating the total transaction cost can be found [here](/docs/vrf/v2/subscription/#request-and-receive-data).
 
 ## Configurations
 

@@ -57,7 +57,7 @@ For this example, create a new subscription on the Rinkeby testnet.
 
 1. After you add funds, click **Add consumer**. A page opens with your account details and subscription ID.
 
-1. Record your subscription ID, which you need for your consumer contract. You will add the consumer to your subscription later.
+1. Record your subscription ID, which you need for your consuming contract. You will add the consuming contract to your subscription later.
 
 You can always find your subscription IDs, balances, and consumers on the [Subscription Manager](https://vrf.chain.link/) page.
 
@@ -90,7 +90,7 @@ Build and deploy the contract on Rinkeby.
 
 1. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
 
-1. After you deploy your contract, copy the address from the **Deployed Contracts** list in Remix. Before you can request randomness from VRF v2, you must add this address as an approved consumer on your subscription account.
+1. After you deploy your contract, copy the address from the **Deployed Contracts** list in Remix. Before you can request randomness from VRF v2, you must add this address as an approved consuming contract on your subscription account.
 
    ![Example showing the contract address listed under the Contracts list in Remix](/images/vrf/getContractAddress.png)
 
@@ -98,7 +98,7 @@ Build and deploy the contract on Rinkeby.
 
 1. Under the **Consumers** section of the Subscription Manager, click **Add consumer**.
 
-1. Enter the address of your consumer contract that you just deployed and click **Add consumer**. MetaMask opens and asks you to confirm the transaction.
+1. Enter the address of your consuming contract that you just deployed and click **Add consumer**. MetaMask opens and asks you to confirm the transaction.
 
 Your example contract is deployed and approved to use your subscription balance to pay for VRF v2 requests. Next, [request random values](#request-random-values) from Chainlink VRF.
 
@@ -123,7 +123,7 @@ You deployed a simple contract that can request and receive random values from C
 
 ## Analyzing the contract
 
-In this example, your MetaMask wallet is the subscription owner and you created a consumer contract to use that subscription. The consumer contract uses static configuration parameters.
+In this example, your MetaMask wallet is the subscription owner and you created a consuming contract to use that subscription. The consuming contract uses static configuration parameters.
 
 ```solidity
 {% include 'samples/VRF/VRFv2Consumer.sol' %}

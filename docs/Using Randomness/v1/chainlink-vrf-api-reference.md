@@ -21,7 +21,7 @@ API reference for [`VRFConsumerBase`](https://github.com/smartcontractkit/chainl
 
 | Name                        | Description                        |
 | --------------------------- | ---------------------------------- |
-| [constructor](#constructor) | Initialize your consumer contract. |
+| [constructor](#constructor) | Initialize your consuming contract. |
 
 ### Functions
 
@@ -34,7 +34,7 @@ API reference for [`VRFConsumerBase`](https://github.com/smartcontractkit/chainl
 
 ## Constructor
 
-Initialize your consumer contract.
+Initialize your consuming contract.
 
 ```javascript Solidity
 constructor(address _vrfCoordinator, address _link) public

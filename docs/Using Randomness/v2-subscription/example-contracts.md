@@ -19,7 +19,7 @@ metadata:
 >
 > If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
-How you manage the subscription depends on your randomness needs. You can configure your subscriptions using the [Subscription Manager](https://vrf.chain.link), but these examples demonstrate how to create your subscription and add your consumer contracts programmatically. For these examples, the contract owns and manages the subscription. You can still view the subscriptions in the [Subscription Manager](https://vrf.chain.link). Any wallet can provide funding to those subscriptions.
+How you manage the subscription depends on your randomness needs. You can configure your subscriptions using the [Subscription Manager](https://vrf.chain.link), but these examples demonstrate how to create your subscription and add your consuming contracts programmatically. For these examples, the contract owns and manages the subscription. You can still view the subscriptions in the [Subscription Manager](https://vrf.chain.link). Any wallet can provide funding to those subscriptions.
 
 **Table of contents**
 
@@ -42,9 +42,9 @@ See the example in the [Subscription manager contract](#subscription-manager-con
 
 ## Subscription manager contract
 
-In this example, the contract operates as a subscription owner and can run functions to add consumer contracts to the subscription. The consumer contracts must include the `requestRandomWords()` function with the correct coordinator parameters and the correct subscription ID to request random values and use the subscription balance. The consumer contracts must also include the `fulfillRandomWords()` function to receive the random values.
+In this example, the contract operates as a subscription owner and can run functions to add consuming contracts to the subscription. The consuming contracts must include the `requestRandomWords()` function with the correct coordinator parameters and the correct subscription ID to request random values and use the subscription balance. The consuming contracts must also include the `fulfillRandomWords()` function to receive the random values.
 
-Subscription owners and consumers do not have to be separate. This contract can also act as a consumer by running its own `requestRandomWords()` function, but it must add itself as an approved consumer. This example contract includes functions in the `constructor()` that creates the subscription and adds itself as a consumer automatically when you deploy it.
+Subscription owners and consuming contracts do not have to be separate. This contract can also act as a consuming contract by running its own `requestRandomWords()` function, but it must add itself as an approved consumer. This example contract includes functions in the `constructor()` that creates the subscription and adds itself as a consuming contract automatically when you deploy it.
 
 ```solidity
 {% include 'samples/VRF/VRFv2SubscriptionManager.sol' %}
@@ -67,22 +67,22 @@ To use this contract, compile and deploy it in Remix.
 
 1. Run the `topUpSubscription()` function to send LINK from your contract to your subscription balance. For this example, specify a value of `3000000000000000000`, which is equivalent to three LINK.
 
-1. Create and deploy a consumer contract that includes the following components:
+1. Create and deploy a consuming contract that includes the following components:
 
    - The `requestRandomWords()` function and the required variables and your subscription ID
    - The `fulfillRandomWords()` callback function
 
    You can use the example from the [Get a Random Number](/docs/vrf/v2/subscription/get-a-random-number/#analyzing-the-contract) guide.
 
-1. After you deploy the consumer contract, add it to the subscription as an approved consumer using the `addConsumer()` function on your subscription manager contract. Specify the address of your consumer contract.
+1. After you deploy the consuming contract, add it to the subscription as an approved consuming using the `addConsumer()` function on your subscription manager contract. Specify the address of your consuming contract.
 
-1. On the consumer contract, run the `requestRandomWords()` function to request and receive random values. The request might take several minutes to process. Track pending request status in the [Subscription Manager](https://vrf.chain.link) app.
+1. On the consuming contract, run the `requestRandomWords()` function to request and receive random values. The request might take several minutes to process. Track pending request status in the [Subscription Manager](https://vrf.chain.link) app.
 
-   The consumer contract can continue to make requests until your subscription balance runs out. The subscription manager contract must maintain sufficient balance in the subscription so that the consumers can continue to operate.
+   The consuming contract can continue to make requests until your subscription balance runs out. The subscription manager contract must maintain sufficient balance in the subscription so that the consumers can continue to operate.
 
 1. When you are done with your contracts and the subscription, run the `cancelSubscription()` to close the subscription and send the remaining LINK to your wallet address. Specify the address of the receiving wallet.
 
-If you need to remove consumer contracts from the subscription, use the `removeConsumer()` function. Specify the address of the consumer contract to be removed.
+If you need to remove consuming contracts from the subscription, use the `removeConsumer()` function. Specify the address of the consuming contract to be removed.
 
 ## Funding and requesting simultaneously
 
