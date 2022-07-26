@@ -22,7 +22,7 @@ Chainlink VRF (Verifiable Random Function) is a provably fair and verifiable ran
 
 - [Overview](#overview)
 - [Two methods to request randomness](#two-methods-to-request-randomness)
-- [Choosing the right method](#choosing-the-right-method)
+- [Choosing the correct method](#choosing-the-correct-method)
 - [Supported networks](#supported-networks)
 
 ## Overview
