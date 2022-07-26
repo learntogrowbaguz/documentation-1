@@ -49,11 +49,11 @@ For this example, use the [VRFv2AdHocConsumer.sol](https://remix.ethereum.org/#u
 - `VRFV2WrapperConsumerBase.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol)
 - `ConfirmedOwner.sol`[(link)](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/ConfirmedOwner.sol)
 
-The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`, number of random words `numWords`, VRF v2 Wrapper address `wrapperAddress` and link token address `linkAddress`. You can change these parameters if you want to experiment on different testnets.
+The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`, the number of random words `numWords`, the VRF v2 Wrapper address `wrapperAddress`, and the LINK token address `linkAddress`. You can change these parameters if you want to experiment on different testnets.
 
 Build and deploy the contract on Rinkeby.
 
-1. Open the `VRFv2AdHocConsumer.sol`[(link)](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol) contract in Remix.
+1. Open the [`VRFv2AdHocConsumer.sol` contract](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol) in Remix.
 
 <div class="remix-callout">
       <a href="https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2AdHocConsumer.sol" target="_blank" >Open in Remix</a>
@@ -62,7 +62,7 @@ Build and deploy the contract on Rinkeby.
 
 1. On the **Compile** tab in Remix, compile the `VRFv2AdHocConsumer` contract.
 
-1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Web3 Environment**, select the `VRFv2AdHocConsumer` contract from the contract list.
+1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Web3 Environment** and select the `VRFv2AdHocConsumer` contract from the contract list.
 
 1. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
 
@@ -70,11 +70,11 @@ Build and deploy the contract on Rinkeby.
 
 ## Fund Your Contract
 
-Requesting for randomness will fail unless your consuming contract has enough LINK. Learn how to [Acquire testnet LINK](/docs/acquire-link/) and [Fund your contract](/docs/fund-your-contract/). For this example, funding with 2 LINK should be sufficient.
+Requests for randomness will fail unless your consuming contract has enough LINK. Learn how to [Acquire testnet LINK](/docs/acquire-link/) and [Fund your contract](/docs/fund-your-contract/). For this example, funding with 2 LINK should be sufficient.
 
 ## Request random values
 
-The deployed contract requests random values from Chainlink VRF, receives those values, builds a struct `RequestStatus` containing them and stores the struct in a mapping `s_requests`. Run the `requestRandomWords()` function on your contract to start the request.
+The deployed contract requests random values from Chainlink VRF, receives those values, builds a struct `RequestStatus` containing them, and stores the struct in a mapping `s_requests`. Run the `requestRandomWords()` function on your contract to start the request.
 
 1. Return to Remix and view your deployed contract functions in the **Deployed Contracts** list.
 
@@ -82,9 +82,9 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 
    Depending on current testnet conditions, it might take a few minutes for the callback to return the requested random values to your contract.
 
-1. After the oracle returns the random values to your contract, the mapping `s_requests` is updated: The received random values are stored in `s_requests[_requestId].randomWords`.
+1. After the oracle returns the random values to your contract, the mapping `s_requests` is updated. The received random values are stored in `s_requests[_requestId].randomWords`.
 
-1. Call `getRequestStatus()` specifying the `requestId` to display the random words.
+1. Call `getRequestStatus()` and specify the `requestId` to display the random words.
 
 > 📘 Note on Requesting Randomness
 > Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf/v2/security/) page.
@@ -104,7 +104,7 @@ In this example, the consuming contract uses static configuration parameters.
 
 The parameters define how your requests will be processed. You can find the values for your network in the [Configuration](/docs/vrf/v2/ad-hoc/configuration/) page.
 
-- `uint32 callbackGasLimit`: The limit for how much gas to use for the callback request to your contract's `fulfillRandomWords()` function. It must be less than the `maxGasLimit` limit on the coordinator contract minus the `wrapperGasOverhead` (see [VRF v2 Ad-hoc limits](/docs/vrf/v2/ad-hoc/#limits) for more details). Adjust this value for larger requests depending on how your `fulfillRandomWords()` function processes and stores the received random values. If your `callbackGasLimit` is not sufficient, the callback will fail while your consuming contract is still charged for the work done to generate your requested random values.
+- `uint32 callbackGasLimit`: The limit for how much gas to use for the callback request to your contract's `fulfillRandomWords()` function. It must be less than the `maxGasLimit` limit on the coordinator contract minus the `wrapperGasOverhead`. See the [VRF v2 Ad-hoc limits](/docs/vrf/v2/ad-hoc/#limits) for more details. Adjust this value for larger requests depending on how your `fulfillRandomWords()` function processes and stores the received random values. If your `callbackGasLimit` is not sufficient, the callback will fail and your consuming contract is still charged for the work done to generate your requested random values.
 
 - `uint16 requestConfirmations`: How many confirmations the Chainlink node should wait before responding. The longer the node waits, the more secure the random value is. It must be greater than the `minimumRequestBlockConfirmations` limit on the coordinator contract.
 

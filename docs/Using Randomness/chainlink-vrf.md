@@ -41,17 +41,17 @@ To learn more about the benefits of Chainlink VRF v2, see our blog post [Chainli
 
 Chainlink VRF v2 offers two methods for requesting randomness:
 
-- [Subscription](/docs/vrf/v2/subscription/): Users create a subscription account and fund its balance with LINK tokens. Users can then link one or several consuming contracts to the subscription account. When the consuming contracts request randomness, the transaction costs are calculated once the randomness requests are fulfilled and the subscription balance is deducted accordingly. This mode allows the users to fund their use of Chainlink VRF from a single location.
-- [Ad-hoc](/docs/vrf/v2/ad-hoc/): Consuming contracts directly pay with LINK when they request for randomness. Hence users have to directly fund their consuming contracts and ensure there are enough LINK tokens to pay for randomness requests.
+- [Subscription](/docs/vrf/v2/subscription/): Create a subscription account and fund its balance with LINK tokens. Users can then connect multiple consuming contracts to the subscription account. When the consuming contracts request randomness, the transaction costs are calculated after the randomness requests are fulfilled and the subscription balance is deducted accordingly. This method allows you to fund requests for multiple consumer contracts from a single subscription.
+- [Ad-hoc](/docs/vrf/v2/ad-hoc/): Consuming contracts directly pay with LINK when they request random values. You must directly fund your consumer contracts and ensure that there are enough LINK tokens to pay for randomness requests.
 
-## Choosing the right method
+## Choosing the correct method
 
 Depending on your use case, one method might be more suitable than another. The recommendations are the following:
 
-- If your use case requires to regularly request for randomness then choose the subscription method. Otherwise , choose the ad-hoc method. The ad-hoc method is more suitable to one-off/seldom requests.
-- If you have several VRF consuming contracts then choose the subscription method.
-- If you want more control on the maximum gas price to be paid and less gas overhead then choose the subscription method. You can read the [Subscription](/docs/vrf/v2/subscription/) and [Ad-hoc](/docs/vrf/v2/ad-hoc/) explanation pages to understand how the transaction costs are calculated.
-- Due to an overhead with the ad-hoc method, you can request much more random words in a single request with the Subscription method than the Ad-hoc method. You can compare the maximum number of words per request and per method: [Subscription configuration](/docs/vrf/v2/subscription/configuration/#configurations) and [Ad-hoc configuration](/docs/vrf/v2/ad-hoc/configuration/#configurations).
+- If your use case requires regular requests for randomness, choose the subscription method to simplify funding and reduce the overall cost. Otherwise , choose the ad-hoc method. The ad-hoc method is more suitable for infrequent one-off requests.
+- If you have several VRF consuming contracts, choose the subscription method.
+- To reduce gas overhead and have more control over the maximum gas price for requests, choose the subscription method. You can read the [Subscription](/docs/vrf/v2/subscription/) and [Ad-hoc](/docs/vrf/v2/ad-hoc/) explanation pages to understand how the transaction costs are calculated.
+- Because the ad-hoc method has higher overhead, it cannot return as many random words in a single request as the subscription method. You can compare the maximum number of words per request and per method on the [Subscription configuration](/docs/vrf/v2/subscription/configuration/#configurations) and [Ad-hoc configuration](/docs/vrf/v2/ad-hoc/configuration/#configurations) pages.
 
 ## Supported networks
 
