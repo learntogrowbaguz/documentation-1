@@ -4,7 +4,7 @@ section: ethereum
 date: Last Modified
 title: 'Introduction to Chainlink VRF'
 permalink: 'docs/vrf/v2/introduction/'
-whatsnext: { 'Method 1 : Subscription': '/docs/vrf/v2/subscription/', 'Method 2 : Ad-hoc': '/docs/vrf/v2/ad-hoc/' }
+whatsnext: { 'Method 1 : Subscription': '/docs/vrf/v2/subscription/', 'Method 2 : Direct funding': '/docs/vrf/v2/direct-funding/' }
 metadata:
   title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF'
   description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF (an RNG). This guide uses Solidity code examples.'
@@ -42,23 +42,23 @@ To learn more about the benefits of Chainlink VRF v2, see our blog post [Chainli
 Chainlink VRF v2 offers two methods for requesting randomness:
 
 - [Subscription](/docs/vrf/v2/subscription/): Create a subscription account and fund its balance with LINK tokens. Users can then connect multiple consuming contracts to the subscription account. When the consuming contracts request randomness, the transaction costs are calculated after the randomness requests are fulfilled and the subscription balance is deducted accordingly. This method allows you to fund requests for multiple consumer contracts from a single subscription.
-- [Ad-hoc](/docs/vrf/v2/ad-hoc/): Consuming contracts directly pay with LINK when they request random values. You must directly fund your consumer contracts and ensure that there are enough LINK tokens to pay for randomness requests.
+- [Direct funding](/docs/vrf/v2/direct-funding/): Consuming contracts directly pay with LINK when they request random values. You must directly fund your consumer contracts and ensure that there are enough LINK tokens to pay for randomness requests.
 
 ## Choosing the correct method
 
 Depending on your use case, one method might be more suitable than another. The recommendations are the following:
 
-- If your use case requires regular requests for randomness, choose the subscription method to simplify funding and reduce the overall cost. Otherwise , choose the ad-hoc method. The ad-hoc method is more suitable for infrequent one-off requests.
-- If you have several VRF consuming contracts, choose the subscription method.
-- To reduce gas overhead and have more control over the maximum gas price for requests, choose the subscription method. You can read the [Subscription](/docs/vrf/v2/subscription/) and [Ad-hoc](/docs/vrf/v2/ad-hoc/) explanation pages to understand how the transaction costs are calculated.
-- Because the ad-hoc method has higher overhead, it cannot return as many random words in a single request as the subscription method. You can compare the maximum number of words per request and per method on the [Subscription configuration](/docs/vrf/v2/subscription/configuration/#configurations) and [Ad-hoc configuration](/docs/vrf/v2/ad-hoc/configuration/#configurations) pages.
+- If your use case requires regular requests for randomness, choose the Subscription method to simplify funding and reduce the overall cost. Otherwise , choose the Direct funding method. The Direct funding method is more suitable for infrequent one-off requests.
+- If you have several VRF consuming contracts, choose the Subscription method.
+- To reduce gas overhead and have more control over the maximum gas price for requests, choose the Subscription method. You can read the [Subscription](/docs/vrf/v2/subscription/) and [Direct funding](/docs/vrf/v2/direct-funding/) explanation pages to understand how the transaction costs are calculated.
+- Because the Direct funding method has higher overhead, it cannot return as many random words in a single request as the Subscription method. You can compare the maximum number of words per request and per method on the [Subscription configuration](/docs/vrf/v2/subscription/configuration/#configurations) and [Direct funding configuration](/docs/vrf/v2/direct-funding/configuration/#configurations) pages.
 
 ## Supported networks
 
 The contract addresses and gas price limits are different depending on which method you use to get randomness. You can find the configuration, addresses, and limits for each method on the following pages:
 
 - [Subscription Configuration](/docs/vrf/v2/subscription/configuration/)
-- [Ad-hoc Configuration](/docs/vrf/v2/ad-hoc/configuration/)
+- [Direct funding Configuration](/docs/vrf/v2/direct-funding/configuration/)
 
 Chainlink VRF v2 is currently available on the following networks:
 

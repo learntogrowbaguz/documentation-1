@@ -2,19 +2,19 @@
 layout: nodes.liquid
 section: ethereum
 date: Last Modified
-title: 'Ad-hoc Method'
-permalink: 'docs/vrf/v2/ad-hoc/'
+title: 'Direct Funding Method'
+permalink: 'docs/vrf/v2/direct-funding/'
 whatsnext:
   {
-    'Get a Random Number': '/docs/vrf/v2/ad-hoc/get-a-random-number/',
-    'Configuration': '/docs/vrf/v2/ad-hoc/configuration/',
+    'Get a Random Number': '/docs/vrf/v2/direct-funding/get-a-random-number/',
+    'Configuration': '/docs/vrf/v2/direct-funding/configuration/',
   }
 metadata:
-  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Ad-hoc method'
-  description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2. This guide uses the ad-hoc method.'
+  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Direct funding method'
+  description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2. This guide uses the Direct funding method.'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Ad-hoc method.
+> 📘 You are viewing the VRF v2 guide - Direct funding method.
 >
 > - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
 >
@@ -24,7 +24,7 @@ metadata:
 
 - [Overview](#overview)
 - [Concepts](#concepts)
-  - [VRF Ad-hoc](#vrf-ad-hoc)
+  - [VRF Direct funding](#vrf-direct-funding)
   - [Request and Receive Data](#request-and-receive-data)
     - [End To End Diagram](#end-to-end-diagram)
     - [Explanation](#explanation)
@@ -32,13 +32,13 @@ metadata:
 
 ## Overview
 
-This guide explains how to generate random numbers using the ad-hoc method. This method doesn't require a subscription and is optimal for one-off requests for randomness. This method also works best for applications where your end-users must pay the fees for VRF because the cost of the request is determined at request time.
+This guide explains how to generate random numbers using the Direct funding method. This method doesn't require a subscription and is optimal for one-off requests for randomness. This method also works best for applications where your end-users must pay the fees for VRF because the cost of the request is determined at request time.
 
 ## Concepts
 
-### VRF Ad-hoc
+### VRF Direct funding
 
-Unlike the [subscription method](/docs/vrf/v2/subscription/), the ad-hoc method does not require you to create subscriptions and pre-fund them. Instead, you must directly fund consuming contracts with LINK tokens before they request randomness.
+Unlike the [subscription method](/docs/vrf/v2/subscription/), the Direct funding method does not require you to create subscriptions and pre-fund them. Instead, you must directly fund consuming contracts with LINK tokens before they request randomness.
 
 For Chainlink VRF v2 to fulfill your requests, you must have a sufficient amount of LINK in your consuming contract. Gas cost calculation includes the following variables:
 
@@ -67,7 +67,7 @@ The gas price depends on current network conditions. The callback gas depends on
 
 #### End To End Diagram
 
-![Vrf v2 ad-hoc method end to end diagram](/images/vrf/v2-ad-hoc-e2e.png)
+![Vrf v2 Direct funding method end to end diagram](/images/vrf/v2-direct-funding-e2e.png)
 
 Two types of accounts exist in the Ethereum ecosystem:
 
@@ -86,9 +86,9 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
 
 1. The consuming contract must inherit [VRFV2WrapperConsumerBase](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol) and implement the `fulfillRandomWords` function, which is the _callback VRF function_. Submit your VRF request by calling the `requestRandomness` function in the [VRFV2WrapperConsumerBase](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol) contract. Include the following parameters in your request:
 
-- `requestConfirmations`: The number of block confirmations the oracle node will wait to respond. The minimum and maximum confirmations for your network can be found [here](/docs/vrf/v2/ad-hoc/configuration/#configurations).
+- `requestConfirmations`: The number of block confirmations the oracle node will wait to respond. The minimum and maximum confirmations for your network can be found [here](/docs/vrf/v2/direct-funding/configuration/#configurations).
 - `callbackGasLimit`: The maximum amount of gas to pay for completing the callback VRF function.
-- `numWords`: The number of random numbers to request. You can find the maximum number of random values per request for your network in the [configurations](/docs/vrf/v2/ad-hoc/configuration/#configurations) section.
+- `numWords`: The number of random numbers to request. You can find the maximum number of random values per request for your network in the [configurations](/docs/vrf/v2/direct-funding/configuration/#configurations) section.
 
 2. The consuming contract calls the [VRFV2Wrapper](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2Wrapper.sol) `calculateRequestPrice` function to estimate the total transaction cost to fulfill randomness. Then the consuming contract calls the [LinkToken](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.4/LinkToken.sol) `transferAndCall` function to pay the wrapper with the calculated request price. This method sends LINK tokens and executes the [VRFV2Wrapper](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2Wrapper.sol) `onTokenTransfer` logic. This triggers the VRF [VRF Coordinator](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFCoordinatorV2.sol) `requestRandomWords` function to request randomness.
    The final gas cost to fulfill randomness is estimated based on how much gas is expected for the verification and callback. The total gas cost in wei uses the following formula:
@@ -97,12 +97,12 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
    (Gas price * (Verification gas + Callback gas limit + Wrapper gas Overhead)) = total gas cost
    ```
 
-   The total gas cost is converted to LINK using the ETH/LINK data feed. In the unlikely event that the data feed is unavailable, the VRF Wrapper uses the `fallbackWeiPerUnitLink` value for the conversion instead. The `fallbackWeiPerUnitLink` value is defined in the [VRF v2 Wrapper contract](/docs/vrf/v2/ad-hoc/configuration/#configurations) for your selected network.
+   The total gas cost is converted to LINK using the ETH/LINK data feed. In the unlikely event that the data feed is unavailable, the VRF Wrapper uses the `fallbackWeiPerUnitLink` value for the conversion instead. The `fallbackWeiPerUnitLink` value is defined in the [VRF v2 Wrapper contract](/docs/vrf/v2/direct-funding/configuration/#configurations) for your selected network.
 
    A LINK premium is then added to the total gas cost. The premium is divided in two parts:
 
-   - Wrapper premium: The premium percentage. You can find the percentage for your network in the [Configurations](/docs/vrf/v2/ad-hoc/configuration/#configurations) section.
-   - Coordinator premium: A flat fee. This premium is defined in the `fulfillmentFlatFeeLinkPPMTier1` parameter in millionths of LINK. You can find the flat fee of the coordinator for your network in the [Configurations](/docs/vrf/v2/ad-hoc/configuration/#configurations) section.
+   - Wrapper premium: The premium percentage. You can find the percentage for your network in the [Configurations](/docs/vrf/v2/direct-funding/configuration/#configurations) section.
+   - Coordinator premium: A flat fee. This premium is defined in the `fulfillmentFlatFeeLinkPPMTier1` parameter in millionths of LINK. You can find the flat fee of the coordinator for your network in the [Configurations](/docs/vrf/v2/direct-funding/configuration/#configurations) section.
 
    ```
    ((total gas cost * Wrapper premium) + Coordinator premium) = total request cost
@@ -118,7 +118,7 @@ Requests to Chainlink VRF v2 follow the [Request & Receive Data](/docs/request-a
 
 ### Limits
 
-You can see the configuration for each network on the [Configuration](/docs/vrf/v2/ad-hoc/configuration/) page. You can also view the full configuration for each VRF v2 Wrapper contract directly in Etherscan. As an example, view the [Ethereum Mainnet VRF v2 Wrapper contract](https://etherscan.io/address/0x685fCaf489C2FE2e289a68Bc10AA94F88A83E655#readContract) configuration by calling `getConfig` function.
+You can see the configuration for each network on the [Configuration](/docs/vrf/v2/direct-funding/configuration/) page. You can also view the full configuration for each VRF v2 Wrapper contract directly in Etherscan. As an example, view the [Ethereum Mainnet VRF v2 Wrapper contract](https://etherscan.io/address/0x685fCaf489C2FE2e289a68Bc10AA94F88A83E655#readContract) configuration by calling `getConfig` function.
 
 - Each wrapper has a `MAX_NUM_WORDS` parameter that limits the maximum number of random values you can receive in each request.
 

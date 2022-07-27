@@ -189,7 +189,7 @@ module.exports = {
             url: '/docs/vrf/v2/introduction/',
           },
           {
-            title: 'Method 1: Subscription',
+            title: 'Subscription method',
             url: '/docs/vrf/v2/subscription/',
             children: [
               {
@@ -211,20 +211,20 @@ module.exports = {
             ],
           },
           {
-            title: 'Method 2: Ad-hoc',
-            url: '/docs/vrf/v2/ad-hoc/',
+            title: 'Direct funding method',
+            url: '/docs/vrf/v2/direct-funding/',
             children: [
               {
                 title: 'Get a Random Number',
-                url: '/docs/vrf/v2/ad-hoc/get-a-random-number/',
+                url: '/docs/vrf/v2/direct-funding/get-a-random-number/',
               },
               {
                 title: 'Configuration',
-                url: '/docs/vrf/v2/ad-hoc/configuration/',
+                url: '/docs/vrf/v2/direct-funding/configuration/',
               },
               {
                 title: 'Migrating to VRF v2',
-                url: '/docs/vrf/v2/ad-hoc/migration-v1-v2/',
+                url: '/docs/vrf/v2/direct-funding/migration-v1-v2/',
               },
             ],
           },

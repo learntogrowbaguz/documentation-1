@@ -17,7 +17,7 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> - To learn how to request random numbers without a subscription, see the [Ad-hoc Method](/docs/vrf/v2/ad-hoc/) guide.
+> - To learn how to request random numbers without a subscription, see the [Direct funding Method](/docs/vrf/v2/direct-funding/) guide.
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 

@@ -3,7 +3,7 @@ layout: nodes.liquid
 section: ethereum
 date: Last Modified
 title: 'Configuration'
-permalink: 'docs/vrf/v2/ad-hoc/configuration/'
+permalink: 'docs/vrf/v2/direct-funding/configuration/'
 metadata:
   title: 'Chainlink VRF Contract Addresses'
   linkToWallet: true
@@ -11,7 +11,7 @@ metadata:
     0: '/files/OpenGraph_V3.png'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Ad-hoc method.
+> 📘 You are viewing the VRF v2 guide - Direct funding method.
 >
 > - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
 >
@@ -19,7 +19,7 @@ metadata:
 
 Chainlink VRF allows you to integrate provably fair and verifiably random data in your smart contract.
 
-For implementation details, read [Introduction to Chainlink VRF v2 Ad-hoc method](/docs/vrf/v2/ad-hoc/).
+For implementation details, read [Introduction to Chainlink VRF v2 Direct funding method](/docs/vrf/v2/direct-funding/).
 
 **Table of contents**
 
@@ -42,7 +42,7 @@ These parameters are configured in the VRF v2 Wrapper contract. You can view the
 Some parameters are important to know and are configured in the coordinator contract. You can view these values by running `getConfig` on the coordinator or by viewing the coordinator contract in a blockchain explorer.
 
 - `uint16 minimumRequestConfirmations`: The minimum number of confirmation blocks on VRF requests before oracles respond
-- `uint32 maxGasLimit`: The maximum gas limit supported for a `fulfillRandomWords` callback. Note that you still need to substract the `wrapperGasOverhead` for the accurate limit, as explained in [Ad-hoc limits](/docs/vrf/v2/ad-hoc/#limits).
+- `uint32 maxGasLimit`: The maximum gas limit supported for a `fulfillRandomWords` callback. Note that you still need to substract the `wrapperGasOverhead` for the accurate limit, as explained in [Direct funding limits](/docs/vrf/v2/direct-funding/#limits).
 
 ## Fee Parameters
 
@@ -51,7 +51,7 @@ Fee parameters are configured in the VRF v2 Wrapper and the VRF v2 Coordinator c
 - The `uint32 fulfillmentFlatFeeLinkPPM` parameter is a flat fee and defines the fees per request specified in millionths of LINK.
 - The `uint8 wrapperPremiumPercentage` parameter defines the premium ratio in percentage. For example, a value of _0_ indicates no premium. A value of _15_ indicates a _15%_ premium.
 
-The details for calculating the total transaction cost can be found [here](/docs/vrf/v2/ad-hoc/#request-and-receive-data).
+The details for calculating the total transaction cost can be found [here](/docs/vrf/v2/direct-funding/#request-and-receive-data).
 
 ## Configurations
 
