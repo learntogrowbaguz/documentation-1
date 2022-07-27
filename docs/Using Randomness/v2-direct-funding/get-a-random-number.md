@@ -62,7 +62,7 @@ Build and deploy the contract on Rinkeby.
 
 1. On the **Compile** tab in Remix, compile the `VRFv2DirectFundingConsumer` contract.
 
-1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Web3 Environment** and select the `VRFv2DirectFundingConsumer` contract from the contract list.
+1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Provider** environment and select the `VRFv2DirectFundingConsumer` contract from the contract list.
 
 1. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
 
