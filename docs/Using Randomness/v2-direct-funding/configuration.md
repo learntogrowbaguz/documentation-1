@@ -11,9 +11,9 @@ metadata:
     0: '/files/OpenGraph_V3.png'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Direct Funding method.
+> 📘 You are viewing the VRF v2 guide - direct funding method.
 >
-> - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
+> - To learn how to request random numbers with a subscription, see the [subscription method](/docs/vrf/v2/subscription/) guide.
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 

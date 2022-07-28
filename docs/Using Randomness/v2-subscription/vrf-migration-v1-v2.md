@@ -6,9 +6,9 @@ title: 'Migrating to VRF v2'
 permalink: 'docs/vrf/v2/subscription/migration-v1-v2/'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Subscription Method.
+> 📘 You are viewing the VRF v2 guide - subscription method.
 >
-> - To learn how to request random numbers without a subscription, see the [Direct Funding Method](/docs/vrf/v2/direct-funding/) guide.
+> - To learn how to request random numbers without a subscription, see the [direct funding method](/docs/vrf/v2/direct-funding/) guide.
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
