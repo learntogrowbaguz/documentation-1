@@ -114,7 +114,7 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 
    Depending on current testnet conditions, it might take a few minutes for the callback to return the requested random values to your contract. You can see a list of pending requests for your subscription ID in the [Subscription Manager](https://vrf.chain.link/).
 
-3. To fetch the request ID of your request, open a block explorer to read the transaction details(e.g.: [Rinkeby Etherscan](https://rinkeby.etherscan.io/tx/0xe96801e4212d18e9e8872417621792037b817c9253b33f1ffefddef8e007c1e2)). Then click on the _Logs_ tab to see the event logs. Note the `requestId` as you will need it later
+3. To fetch the request ID of your request, open a block explorer to read the transaction details(e.g.: [Rinkeby Etherscan](https://rinkeby.etherscan.io/tx/0xe96801e4212d18e9e8872417621792037b817c9253b33f1ffefddef8e007c1e2)). Then click on the _Logs_ tab to see the event logs. Find `RandomWordsRequested` event log and note the `requestId` as you will need it later
 
 ![Vrf v2 subscription method request logs](/images/vrf/v2-subscription-request-logs.png)
 

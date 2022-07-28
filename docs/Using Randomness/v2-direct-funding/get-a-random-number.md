@@ -82,7 +82,7 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 
    Depending on current testnet conditions, it might take a few minutes for the callback to return the requested random values to your contract.
 
-3. To fetch the request ID of your request, open a block explorer to read the transaction details(e.g.: [Rinkeby Etherscan](https://rinkeby.etherscan.io/tx/0xda77ab99767f81ac49dd8f09fe3843a4487d58f191855929db1c1fc132c4fca8)). Then click on the _Logs_ tab to see the event logs. Note the `requestId` as you will need it later
+3. To fetch the request ID of your request, open a block explorer to read the transaction details(e.g.: [Rinkeby Etherscan](https://rinkeby.etherscan.io/tx/0xda77ab99767f81ac49dd8f09fe3843a4487d58f191855929db1c1fc132c4fca8)). Then click on the _Logs_ tab to see the event logs. Find `RandomWordsRequested` event log and note the `requestId` as you will need it later
 
 ![Vrf v2 direct funding method request logs](/images/vrf/v2-direct-funding-request-logs.png)
 
