@@ -13,13 +13,13 @@ metadata:
 
 > 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> - To learn how to request random numbers without a subscription, see the [Direct funding Method](/docs/vrf/v2/direct-funding/) guide.
+> - To learn how to request random numbers without a subscription, see the [Direct Funding Method](/docs/vrf/v2/direct-funding/) guide.
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
 Chainlink VRF allows you to integrate provably fair and verifiably random data in your smart contract.
 
-For implementation details, read [Introduction to Chainlink VRF v2 Subscription method](/docs/vrf/v2/subscription/).
+For implementation details, read [Introduction to Chainlink VRF v2 Subscription Method](/docs/vrf/v2/subscription/).
 
 **Table of contents**
 

@@ -33,8 +33,8 @@ function fulfillRandomWords(
 
 If you want to get multiple random values from a single VRF request, you can request this directly with the `numWords` argument:
 
-- If you are using the VRF v2 Subscription method, see the [Get a Random Number](/docs/vrf/v2/subscription/get-a-random-number/) guide for an example where one request returns multiple random values.
-- If you are using the VRF v2 Direct funding method, see the [Get a Random Number](/docs/vrf/v2/direct-funding/get-a-random-number/) guide for an example where one request returns multiple random values.
+- If you are using the VRF v2 subscription method, see the [Get a Random Number](/docs/vrf/v2/subscription/get-a-random-number/) guide for an example where one request returns multiple random values.
+- If you are using the VRF v2 direct funding method, see the [Get a Random Number](/docs/vrf/v2/direct-funding/get-a-random-number/) guide for an example where one request returns multiple random values.
 
 ## Processing simultaneous VRF requests
 

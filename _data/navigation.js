@@ -189,7 +189,7 @@ module.exports = {
             url: '/docs/vrf/v2/introduction/',
           },
           {
-            title: 'Subscription method',
+            title: 'Subscription Method',
             url: '/docs/vrf/v2/subscription/',
             children: [
               {
@@ -211,7 +211,7 @@ module.exports = {
             ],
           },
           {
-            title: 'Direct funding method',
+            title: 'Direct Funding Method',
             url: '/docs/vrf/v2/direct-funding/',
             children: [
               {

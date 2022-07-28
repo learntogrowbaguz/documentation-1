@@ -12,10 +12,10 @@ whatsnext:
     'Configuration': '/docs/vrf/v2/direct-funding/configuration/',
   }
 metadata:
-  description: 'How to generate a random number inside a smart contract using Chainlink VRF v2 - Direct funding method.'
+  description: 'How to generate a random number inside a smart contract using Chainlink VRF v2 - Direct Funding Method.'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Direct funding method.
+> 📘 You are viewing the VRF v2 guide - Direct Funding Method.
 >
 > - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
 >
@@ -104,7 +104,7 @@ In this example, the consuming contract uses static configuration parameters.
 
 The parameters define how your requests will be processed. You can find the values for your network in the [Configuration](/docs/vrf/v2/direct-funding/configuration/) page.
 
-- `uint32 callbackGasLimit`: The limit for how much gas to use for the callback request to your contract's `fulfillRandomWords()` function. It must be less than the `maxGasLimit` limit on the coordinator contract minus the `wrapperGasOverhead`. See the [VRF v2 Direct funding limits](/docs/vrf/v2/direct-funding/#limits) for more details. Adjust this value for larger requests depending on how your `fulfillRandomWords()` function processes and stores the received random values. If your `callbackGasLimit` is not sufficient, the callback will fail and your consuming contract is still charged for the work done to generate your requested random values.
+- `uint32 callbackGasLimit`: The limit for how much gas to use for the callback request to your contract's `fulfillRandomWords()` function. It must be less than the `maxGasLimit` limit on the coordinator contract minus the `wrapperGasOverhead`. See the [VRF v2 direct funding limits](/docs/vrf/v2/direct-funding/#limits) for more details. Adjust this value for larger requests depending on how your `fulfillRandomWords()` function processes and stores the received random values. If your `callbackGasLimit` is not sufficient, the callback will fail and your consuming contract is still charged for the work done to generate your requested random values.
 
 - `uint16 requestConfirmations`: How many confirmations the Chainlink node should wait before responding. The longer the node waits, the more secure the random value is. It must be greater than the `minimumRequestBlockConfirmations` limit on the coordinator contract.
 

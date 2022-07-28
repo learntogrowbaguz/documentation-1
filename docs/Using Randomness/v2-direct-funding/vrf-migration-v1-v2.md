@@ -6,7 +6,7 @@ title: 'Migrating to VRF v2'
 permalink: 'docs/vrf/v2/direct-funding/migration-v1-v2/'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Direct funding method.
+> 📘 You are viewing the VRF v2 guide - Direct Funding Method.
 >
 > - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
 >
@@ -14,12 +14,12 @@ permalink: 'docs/vrf/v2/direct-funding/migration-v1-v2/'
 
 **Table of contents**
 
-- [Comparison between VRF v1 and VRF v2 (Direct funding method)](#comparison-between-vrf-v1-and-vrf-v2-direct-funding-method)
+- [Comparing VRF v1 to the VRF v2 direct funding method](#comparing-vrf-v1-to-the-vrf-v2-direct-funding-method)
 - [Updating your applications to use VRF v2](#updating-your-applications-to-use-vrf-v2)
 
-## Comparison between VRF v1 and VRF v2 (Direct funding method)
+## Comparing VRF v1 to the VRF v2 direct funding method
 
-The main similarity between VRF v1 and VRF v2 Direct funding method is that consuming contracts must be funded with LINK to pay for requests. However, Chainlink VRF v2 includes several improvements.
+The main similarity between VRF v1 and the VRF v2 direct funding method is that consuming contracts must be funded with LINK to pay for requests. However, Chainlink VRF v2 includes several improvements.
 
 - **Variable Callback Gas Limit:** Chainlink VRF v2 lets you adjust the callback gas limit when your smart contract application receives verifiable randomness. Consuming contracts can execute more complex logic in the callback request function that receives the random values. Tasks involving the delivered randomness are handled during the response process. The new gas limits are higher than the VRF V1 limit, and vary depending on the underlying blockchain that you use. See the gas limits on the [Configuration](/docs/vrf/v2/direct-funding/configuration/) page.
 
@@ -33,7 +33,7 @@ To modify your existing smart contract code to work with VRF v2, complete the fo
 
 1. Import and inherit the new [`VRFV2WrapperConsumerBase.sol` contract](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol) and remove the v1 `VRFConsumerBase.sol` import. This contract includes the `fulfillRandomWords` function.
 
-1. Add a `VRFV2WrapperConsumerBase` constructor as shown in the [Get a Random Number](/docs/vrf/v2/direct-funding/get-a-random-number/) example and use the correct VRF v2 Direct funding configuration.
+1. Add a `VRFV2WrapperConsumerBase` constructor as shown in the [Get a Random Number](/docs/vrf/v2/direct-funding/get-a-random-number/) example and use the correct VRF v2 direct funding configuration.
 
 1. You can still call the `requestRandomness` function. However, the v2 `requestRandomness` function requires several different parameters (`callbackGasLimit` , `requestConfirmations` , `numWords`). See the [Configuration](/docs/vrf/v2/direct-funding/configuration/) page to adjust them for your own needs.
 

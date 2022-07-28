@@ -10,13 +10,13 @@ whatsnext:
     'Configuration': '/docs/vrf/v2/subscription/configuration/',
   }
 metadata:
-  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Subscription method'
+  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Subscription Method'
   description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2(an RNG). This guide uses the subscription method.'
 ---
 
 > 📘 You are viewing the VRF v2 guide - Subscription method.
 >
-> - To learn how to request random numbers without a subscription, see the [Direct funding Method](/docs/vrf/v2/direct-funding/) guide.
+> - To learn how to request random numbers without a subscription, see the [Direct Funding Method](/docs/vrf/v2/direct-funding/) guide.
 >
 > - If you are using v1, see the [VRF v1 guide](/docs/vrf/v1/introduction/).
 
@@ -34,7 +34,7 @@ metadata:
 
 ## Overview
 
-This section explains how to generate random numbers using the Subscription method.
+This section explains how to generate random numbers using the subscription method.
 
 <p>
   https://www.youtube.com/watch?v=rdJ5d8j1RCg
@@ -72,7 +72,7 @@ The gas price depends on current network conditions. The callback gas depends on
 
 #### End To End Diagram
 
-![Vrf v2 subscription method end to end diagram](/images/vrf/v2-subscription-e2e.png)
+![VRF v2 subscription method end-to-end diagram](/images/vrf/v2-subscription-e2e.png)
 
 Two types of accounts exist in the Ethereum ecosystem:
 

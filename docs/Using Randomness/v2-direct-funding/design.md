@@ -10,11 +10,11 @@ whatsnext:
     'Configuration': '/docs/vrf/v2/direct-funding/configuration/',
   }
 metadata:
-  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Direct funding method'
-  description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2. This guide uses the Direct funding method.'
+  title: 'Generate Random Numbers for Smart Contracts using Chainlink VRF v2 - Direct Funding Method'
+  description: 'Learn how to securely generate random numbers for your smart contract with Chainlink VRF v2. This guide uses the direct funding method.'
 ---
 
-> 📘 You are viewing the VRF v2 guide - Direct funding method.
+> 📘 You are viewing the VRF v2 guide - Direct Funding Method.
 >
 > - To learn how to request random numbers with a subscription, see the [Subscription Method](/docs/vrf/v2/subscription/) guide.
 >
@@ -24,21 +24,21 @@ metadata:
 
 - [Overview](#overview)
 - [Concepts](#concepts)
-  - [VRF Direct funding](#vrf-direct-funding)
-  - [Request and Receive Data](#request-and-receive-data)
-    - [End To End Diagram](#end-to-end-diagram)
+  - [VRF direct funding](#vrf-direct-funding)
+  - [Request and receive data](#request-and-receive-data)
+    - [End-to-end diagram](#end-to-end-diagram)
     - [Explanation](#explanation)
   - [Limits](#limits)
 
 ## Overview
 
-This guide explains how to generate random numbers using the Direct funding method. This method doesn't require a subscription and is optimal for one-off requests for randomness. This method also works best for applications where your end-users must pay the fees for VRF because the cost of the request is determined at request time.
+This guide explains how to generate random numbers using the direct funding method. This method doesn't require a subscription and is optimal for one-off requests for randomness. This method also works best for applications where your end-users must pay the fees for VRF because the cost of the request is determined at request time.
 
 ## Concepts
 
-### VRF Direct funding
+### VRF direct funding
 
-Unlike the [subscription method](/docs/vrf/v2/subscription/), the Direct funding method does not require you to create subscriptions and pre-fund them. Instead, you must directly fund consuming contracts with LINK tokens before they request randomness.
+Unlike the [subscription method](/docs/vrf/v2/subscription/), the direct funding method does not require you to create subscriptions and pre-fund them. Instead, you must directly fund consuming contracts with LINK tokens before they request randomness.
 
 For Chainlink VRF v2 to fulfill your requests, you must have a sufficient amount of LINK in your consuming contract. Gas cost calculation includes the following variables:
 
@@ -65,9 +65,9 @@ The gas price depends on current network conditions. The callback gas depends on
 
 ### Request and Receive Data
 
-#### End To End Diagram
+#### End-to-end diagram
 
-![Vrf v2 Direct funding method end to end diagram](/images/vrf/v2-direct-funding-e2e.png)
+![VRF v2 direct funding method end to end diagram](/images/vrf/v2-direct-funding-e2e.png)
 
 Two types of accounts exist in the Ethereum ecosystem:
 

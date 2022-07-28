@@ -74,8 +74,8 @@ If your `fulfillRandomWords()` implementation reverts, the VRF service will not 
 
 ## Use `VRFConsumerBaseV2` in your contract, to interact with the VRF service
 
-If you implement the [Subscription Method](/docs/vrf/v2/subscription/) then use `VRFConsumerBaseV2`. It includes a check to ensure the randomness is fulfilled by `VRFCoordinatorV2`. For this reason, it is a best practice to inherit from `VRFConsumerBaseV2`. Similarly, don't override `rawFulfillRandomness`.
+If you implement the [subscription method](/docs/vrf/v2/subscription/), use `VRFConsumerBaseV2`. It includes a check to ensure the randomness is fulfilled by `VRFCoordinatorV2`. For this reason, it is a best practice to inherit from `VRFConsumerBaseV2`. Similarly, don't override `rawFulfillRandomness`.
 
 ## Use `VRFv2WrapperConsumer.sol` in your contract, to interact with the VRF service
 
-If you implement the [Direct funding Method](/docs/vrf/v2/direct-funding/) then use `VRFv2WrapperConsumer`. It includes a check to ensure the randomness is fulfilled by `VRFV2Wrapper`. For this reason, it is a best practice to inherit from `VRFv2WrapperConsumer`. Similarly, don't override `rawFulfillRandomWords`.
+If you implement the [direct funding method](/docs/vrf/v2/direct-funding/), use `VRFv2WrapperConsumer`. It includes a check to ensure the randomness is fulfilled by the `VRFV2Wrapper`. For this reason, it is a best practice to inherit from `VRFv2WrapperConsumer`. Similarly, don't override `rawFulfillRandomWords`.
