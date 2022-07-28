@@ -1,7 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+import '@chainlink/contracts/src/v0.8/VRFConsumerBase.sol';
+
+/**
+ * Request testnet LINK and ETH here: https://faucets.chain.link/
+ * Find information on LINK Token Contracts and get the latest ETH and LINK faucets here: https://docs.chain.link/docs/link-token-contracts/
+ */
 
 /**
  * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED VALUES FOR CLARITY.
@@ -9,13 +14,7 @@ import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
  * DO NOT USE THIS CODE IN PRODUCTION.
  */
 
-/**
- * Request testnet LINK and ETH here: https://faucets.chain.link/
- * Find information on LINK Token Contracts and get the latest ETH and LINK faucets here: https://docs.chain.link/docs/link-token-contracts/
- */
-
 contract RandomNumberConsumer is VRFConsumerBase {
-
     bytes32 internal keyHash;
     uint256 internal fee;
 
@@ -32,18 +31,18 @@ contract RandomNumberConsumer is VRFConsumerBase {
     constructor()
         VRFConsumerBase(
             0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B, // VRF Coordinator
-            0x01BE23585060835E02B77ef475b0Cc51aA1e0709  // LINK Token
+            0x01BE23585060835E02B77ef475b0Cc51aA1e0709 // LINK Token
         )
     {
         keyHash = 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311;
-        fee = 0.1 * 10 ** 18; // 0.1 LINK (Varies by network)
+        fee = 0.1 * 10**18; // 0.1 LINK (Varies by network)
     }
 
     /**
      * Requests randomness
      */
     function getRandomNumber() public returns (bytes32 requestId) {
-        require(LINK.balanceOf(address(this)) >= fee, "Not enough LINK - fill contract with faucet");
+        require(LINK.balanceOf(address(this)) >= fee, 'Not enough LINK - fill contract with faucet');
         return requestRandomness(keyHash, fee);
     }
 
