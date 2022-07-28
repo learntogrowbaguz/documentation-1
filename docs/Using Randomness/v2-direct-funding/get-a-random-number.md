@@ -60,13 +60,13 @@ Build and deploy the contract on Rinkeby.
       <a href="/docs/conceptual-overview/#what-is-remix">What is Remix?</a>
 </div>
 
-1. On the **Compile** tab in Remix, compile the `VRFv2DirectFundingConsumer` contract.
+2. On the **Compile** tab in Remix, compile the `VRFv2DirectFundingConsumer` contract.
 
-1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Provider** environment and select the `VRFv2DirectFundingConsumer` contract from the contract list.
+3. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Provider** environment and select the `VRFv2DirectFundingConsumer` contract from the contract list.
 
-1. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
+4. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
 
-1. After you deploy your contract, copy the address from the **Deployed Contracts** list in Remix. Before you can request randomness from VRF v2, you must fund your consuming contract with enough LINK tokens in order to request for randomness. Next, [fund your contract](#fund-your-contract).
+5. After you deploy your contract, copy the address from the **Deployed Contracts** list in Remix. Before you can request randomness from VRF v2, you must fund your consuming contract with enough LINK tokens in order to request for randomness. Next, [fund your contract](#fund-your-contract).
 
 ## Fund Your Contract
 
@@ -78,13 +78,17 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 
 1. Return to Remix and view your deployed contract functions in the **Deployed Contracts** list.
 
-1. Click the `requestRandomWords()` function to send the request for random values to Chainlink VRF. MetaMask opens and asks you to confirm the transaction. After you approve the transaction, Chainlink VRF processes your request. Chainlink VRF fulfills the request and returns the random values to your contract in a callback to the `fulfillRandomWords()` function. At this point, a new key `requestId` is added to the mapping `s_requests`.
+2. Click the `requestRandomWords()` function to send the request for random values to Chainlink VRF. MetaMask opens and asks you to confirm the transaction. After you approve the transaction, Chainlink VRF processes your request. Chainlink VRF fulfills the request and returns the random values to your contract in a callback to the `fulfillRandomWords()` function. At this point, a new key `requestId` is added to the mapping `s_requests`.
 
    Depending on current testnet conditions, it might take a few minutes for the callback to return the requested random values to your contract.
 
-1. After the oracle returns the random values to your contract, the mapping `s_requests` is updated. The received random values are stored in `s_requests[_requestId].randomWords`.
+3. To fetch the request ID of your request, open a block explorer to read the transaction details(e.g.: [Rinkeby Etherscan](https://rinkeby.etherscan.io/tx/0xda77ab99767f81ac49dd8f09fe3843a4487d58f191855929db1c1fc132c4fca8)). Then click on the _Logs_ tab to see the event logs. Note the `requestId` as you will need it later
 
-1. Call `getRequestStatus()` and specify the `requestId` to display the random words.
+![Vrf v2 direct funding method request logs](/images/vrf/v2-direct-funding-request-logs.png)
+
+4. After the oracle returns the random values to your contract, the mapping `s_requests` is updated. The received random values are stored in `s_requests[_requestId].randomWords`.
+
+5. Call `getRequestStatus()` and specify the `requestId` to display the random words.
 
 > 📘 Note on Requesting Randomness
 > Do not re-request randomness even if you do **not** receive an answer right away. Doing so would give the VRF service provider the option to withhold a VRF fulfillment, if it doesn't like the outcome, and wait for the re-request in the hopes that it gets a better outcome. This is similar to the considerations with block confirmation time. For more information, see the [VRF Security Considerations](/docs/vrf/v2/security/) page.

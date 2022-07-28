@@ -16,7 +16,7 @@ import '@chainlink/contracts/src/v0.8/VRFV2WrapperConsumerBase.sol';
  * DO NOT USE THIS CODE IN PRODUCTION.
  */
 
-contract VRFv2AdHocConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
+contract VRFv2DirectFundingConsumer is VRFV2WrapperConsumerBase, ConfirmedOwner {
     event WrappedRequestSent(uint256 requestId, uint32 numWords);
     event WrappedRequestFulfilled(uint256 requestId, uint256[] randomWords, uint256 payment);
 

@@ -77,30 +77,30 @@ The contract also includes pre-configured values for the necessary request param
 
 Build and deploy the contract on Rinkeby.
 
-1. Open the `VRFv2Consumer.sol`[(link)](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2Consumer.sol) contract in Remix.
+1. Open the [`VRFv2Consumer.sol` contract](https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2Consumer.sol) in Remix.
 
 <div class="remix-callout">
       <a href="https://remix.ethereum.org/#url=https://docs.chain.link/samples/VRF/VRFv2Consumer.sol" target="_blank" >Open in Remix</a>
       <a href="/docs/conceptual-overview/#what-is-remix">What is Remix?</a>
 </div>
 
-1. On the **Compile** tab in Remix, compile the `VRFv2Consumer.sol` contract.
+2. On the **Compile** tab in Remix, compile the `VRFv2Consumer.sol` contract.
 
-1. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Provider** environment, select the `VRFv2Consumer` contract from the contract list, and specify your `subscriptionId` so the constructor can set it.
+3. Configure your deployment. On the **Deploy** tab in Remix, select the **Injected Provider** environment, select the `VRFv2Consumer` contract from the contract list, and specify your `subscriptionId` so the constructor can set it.
 
    ![Example showing the deploy button with the subscriptionID field filled in Remix](/images/vrf/deployWithSubscriptionId.png)
 
-1. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
+4. Click the **Deploy** button to deploy your contract on-chain. MetaMask opens and asks you to confirm the transaction.
 
-1. After you deploy your contract, copy the address from the **Deployed Contracts** list in Remix. Before you can request randomness from VRF v2, you must add this address as an approved consuming contract on your subscription account.
+5. After you deploy your contract, copy the address from the **Deployed Contracts** list in Remix. Before you can request randomness from VRF v2, you must add this address as an approved consuming contract on your subscription account.
 
    ![Example showing the contract address listed under the Contracts list in Remix](/images/vrf/getContractAddress.png)
 
-1. In the [Subscription Manager](https://vrf.chain.link/), click the ID of your new subscription under the **My Subscriptions** list. The subscription details page opens.
+6. In the [Subscription Manager](https://vrf.chain.link/), click the ID of your new subscription under the **My Subscriptions** list. The subscription details page opens.
 
-1. Under the **Consumers** section of the Subscription Manager, click **Add consumer**.
+7. Under the **Consumers** section of the Subscription Manager, click **Add consumer**.
 
-1. Enter the address of your consuming contract that you just deployed and click **Add consumer**. MetaMask opens and asks you to confirm the transaction.
+8. Enter the address of your consuming contract that you just deployed and click **Add consumer**. MetaMask opens and asks you to confirm the transaction.
 
 Your example contract is deployed and approved to use your subscription balance to pay for VRF v2 requests. Next, [request random values](#request-random-values) from Chainlink VRF.
 
@@ -110,13 +110,17 @@ The deployed contract requests random values from Chainlink VRF, receives those 
 
 1. Return to Remix and view your deployed contract functions in the **Deployed Contracts** list.
 
-1. Click the `requestRandomWords()` function to send the request for random values to Chainlink VRF. MetaMask opens and asks you to confirm the transaction. After you approve the transaction, Chainlink VRF processes your request. Chainlink VRF fulfills the request and returns the random values to your contract in a callback to the `fulfillRandomWords()` function. At this point, a new key `requestId` is added to the mapping `s_requests`.
+2. Click the `requestRandomWords()` function to send the request for random values to Chainlink VRF. MetaMask opens and asks you to confirm the transaction. After you approve the transaction, Chainlink VRF processes your request. Chainlink VRF fulfills the request and returns the random values to your contract in a callback to the `fulfillRandomWords()` function. At this point, a new key `requestId` is added to the mapping `s_requests`.
 
    Depending on current testnet conditions, it might take a few minutes for the callback to return the requested random values to your contract. You can see a list of pending requests for your subscription ID in the [Subscription Manager](https://vrf.chain.link/).
 
-1. After the oracle returns the random values to your contract, the mapping `s_requests` is updated: The received random values are stored in `s_requests[_requestId].randomWords`.
+3. To fetch the request ID of your request, open a block explorer to read the transaction details(e.g.: [Rinkeby Etherscan](https://rinkeby.etherscan.io/tx/0xe96801e4212d18e9e8872417621792037b817c9253b33f1ffefddef8e007c1e2)). Then click on the _Logs_ tab to see the event logs. Note the `requestId` as you will need it later
 
-1. Call `getRequestStatus()` specifying the `requestId` to display the random words.
+![Vrf v2 subscription method request logs](/images/vrf/v2-subscription-request-logs.png)
+
+4. After the oracle returns the random values to your contract, the mapping `s_requests` is updated: The received random values are stored in `s_requests[_requestId].randomWords`.
+
+5. Call `getRequestStatus()` specifying the `requestId` to display the random words.
 
 You deployed a simple contract that can request and receive random values from Chainlink VRF. To see more advanced examples where the contract can complete the entire process including subscription setup and management, see the [More Examples](/docs/vrf/v2/subscription/more-examples/) page.
 
