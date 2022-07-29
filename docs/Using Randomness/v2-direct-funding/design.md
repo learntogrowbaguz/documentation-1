@@ -67,7 +67,7 @@ The gas price depends on current network conditions. The callback gas depends on
 
 #### End-to-end diagram
 
-![VRF v2 direct funding method end to end diagram](/images/vrf/v2-direct-funding-e2e.png)
+![VRF v2 direct funding method end to end diagram](/images/vrf/v2-direct-funding-e2e.svg)
 
 Two types of accounts exist in the Ethereum ecosystem:
 
