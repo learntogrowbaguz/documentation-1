@@ -35,7 +35,7 @@ For implementation details, read [Introduction to Chainlink VRF v1](/docs/vrf/v1
 
 ## Polygon (Matic) Mumbai Testnet
 
-> 🚰Mumbai Faucet
+> 🚰 Mumbai Faucet
 >
 > Testnet LINK and MATIC are available from [the official Matic faucet](https://faucet.polygon.technology/) and https://faucets.chain.link/mumbai.
 
@@ -105,7 +105,7 @@ For implementation details, read [Introduction to Chainlink VRF v1](/docs/vrf/v1
 
 ## Rinkeby
 
-> 🚰Rinkeby Faucets
+> 🚰 Rinkeby Faucets
 >
 > Testnet LINK is available from https://faucets.chain.link/rinkeby
 > Testnet ETH is available from: https://faucets.chain.link/rinkeby

@@ -70,7 +70,7 @@ The details for calculating the total transaction cost can be found [here](/docs
 
 ### Rinkeby testnet
 
-> 🚰Rinkeby Faucets
+> 🚰 Rinkeby Faucets
 >
 > Testnet LINK is available from https://faucets.chain.link/rinkeby
 > Testnet ETH is available from: https://faucets.chain.link/rinkeby
@@ -136,7 +136,7 @@ The details for calculating the total transaction cost can be found [here](/docs
 
 ### Polygon (Matic) Mumbai Testnet
 
-> 🚰Mumbai Faucet
+> 🚰 Mumbai Faucet
 >
 > Testnet LINK and MATIC are available from the [Polygon faucet](https://faucet.polygon.technology/) and https://faucets.chain.link/mumbai.
 
