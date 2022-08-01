@@ -24,7 +24,7 @@ Chainlink VRF follows the [Request & Receive Data](/docs/request-and-receive-dat
 
 The contract should own enough LINK to pay the specified fee. The beginner walkthrough explains how to [fund your contract](/docs/fund-your-contract/).
 
-Note, the below values have to be configured correctly for VRF requests to work. You can find the respective values for your network in the [VRF Contracts page](/docs/vrf/v1/configuration/).
+Note, the following values must be configured correctly for VRF requests to work. You can find the respective values for your network in the [VRF Contracts page](/docs/vrf/v1/configuration/).
 
 - `LINK Token` - LINK token address on the corresponding network (Ethereum, Polygon, BSC, etc)
 - `VRF Coordinator` - address of the Chainlink VRF Coordinator

@@ -46,11 +46,11 @@ Chainlink VRF v2 offers two methods for requesting randomness:
 
 ## Choosing the correct method
 
-Depending on your use case, one method might be more suitable than another. The recommendations are the following:
+Depending on your use case, one method might be more suitable than another. Consider the following recommendations when you choose a method:
 
 - If your use case requires regular requests for randomness, choose the subscription method to simplify funding and reduce the overall cost. Otherwise, choose the direct funding method. The direct funding method is more suitable for infrequent one-off requests.
 - If you have several VRF consuming contracts, choose the subscription method.
-- To reduce gas overhead and have more control over the maximum gas price for requests, choose the Subscription method. You can read the [Subscription Method](/docs/vrf/v2/subscription/) and [Direct Funding Method](/docs/vrf/v2/direct-funding/) pages to understand how the transaction costs are calculated.
+- To reduce gas overhead and have more control over the maximum gas price for requests, choose the Subscription method. Read the [Subscription Method](/docs/vrf/v2/subscription/) and [Direct Funding Method](/docs/vrf/v2/direct-funding/) pages to understand how the transaction costs are calculated.
 - Because the direct funding method has higher overhead, it cannot return as many random words in a single request as the subscription method. You can compare the maximum number of words per request and per method on the [Subscription Configuration](/docs/vrf/v2/subscription/configuration/#configurations) and [Direct Funding Configuration](/docs/vrf/v2/direct-funding/configuration/#configurations) pages.
 
 ## Supported networks
