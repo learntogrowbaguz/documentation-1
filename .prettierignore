@@ -1,0 +1,17 @@
+dist
+.cache
+.test
+.vercel
+.astro
+temp
+node_modules
+.github
+.changeset
+scripts/reference/chainsToBe.json
+scripts/**/*.js
+data-source
+typechain-types
+public/snippets
+public/search-index.json
+vercel.json
+src/content/quickstarts/**/*.mdx

@@ -1,19 +1,90 @@
 name: Test
-on: 
-  [push, pull_request]
+on: [push, pull_request]
 
 jobs:
-  test:
-    name: Test
+  # Job 1: Check Solidity Compilation and Solhint
+  solidity:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@v4
+      
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
       - name: Install Dependencies
-        run: yarn
-      - name: Build
-        run: yarn build
-      - name: Check Links
-        run: yarn linkcheck
-      - name: Check Solidity
-        run: yarn test
+        run: npm ci
+      
+      - name: Check Solidity Compilation
+        run: npm run sol:compile
+      
+      - name: Check Solidity Solhint
+        run: npm run lint-solc
+
+  # Job 2: Check ESLint
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: Install Dependencies
+        run: npm ci
+      
+      - name: Check ESLint
+        run: npm run lint
+
+  # Job 3: Check Internal Links
+  linkcheck-internal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: Install Dependencies
+        run: npm ci
+      
+      - name: Check Internal Links
+        run: npm run linkcheck-internal
+
+  # Job 4: Check Types
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: Install Dependencies
+        run: npm ci
+      
+      - name: Check Types
+        run: npm run typecheck
